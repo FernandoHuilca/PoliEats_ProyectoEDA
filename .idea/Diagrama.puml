@@ -1,0 +1,71 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class AppBar{
+    producto[]
+    cliente[]
+    administrador[]
+}
+
+class Ganancias{
+
+}
+
+abstract class ProductosDeVenta{
+    nombre: String
+    precio: double
+    Stock: int
+}
+
+class Cliente{
+
+}
+
+class HistorialDeCompras{
+
+}
+
+class Factura{
+
+}
+
+class CarritoDeCompra{
+    Item[]
+}
+
+class Item{
+
+}
+
+
+AppBar -l-> Ganancias
+AppBar -r-> ProductosDeVenta
+AppBar -u-> Cliente
+Cliente -l-> HistorialDeCompras
+HistorialDeCompras -u-> Factura
+Cliente -u-> CarritoDeCompra
+CarritoDeCompra -r-> Item
+@enduml
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
