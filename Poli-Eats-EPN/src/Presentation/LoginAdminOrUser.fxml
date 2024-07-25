@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="365.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.LoginAdminOrUserController">
    <children>
-      <ImageView fitHeight="680.0" fitWidth="365.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="667.0" fitWidth="375.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/Admin%20or%20user.png" />
          </image>

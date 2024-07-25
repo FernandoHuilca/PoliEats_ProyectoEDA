@@ -1,3 +1,4 @@
+
 package BusinessLogic;
 
 import java.io.IOException;
@@ -9,67 +10,69 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class LoginAdminOrUserController implements Initializable {
+
+public class SolicitarCuentaAdminController implements Initializable {
 
     @FXML
-    private Button botonAdmin;
+    private Button Solicitar;
     @FXML
-    private Button botonUser;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-
+    private Button RegresarButton;
+    
     @FXML
-    private void handleButtonActionAdminLogin() {
-          try {
+    public void SolicitarCuenta(){
+        try {
                 // Obtener el Stage actual
-                Stage currentStage = (Stage) botonAdmin.getScene().getWindow();
+                Stage currentStage = (Stage) Solicitar.getScene().getWindow();
 
-                // Cargar el archivo FXML para LoginUsuario
+                // Cargar el archivo FXML para Login
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Presentation/LoginAdmin.fxml"));
                 Parent root = loader.load();
 
                 // Cambiar la escena del Stage actual
                 currentStage.setScene(new Scene(root));
-                currentStage.setTitle("Login Admin");
+                currentStage.setTitle("Login");
 
             } catch (IOException e) {
                 e.printStackTrace();
-                Alert alert = new Alert(AlertType.ERROR);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("No se pudo cargar la interfaz de usuario.");
                 alert.showAndWait();
             }
     }
-
+    
+  
     @FXML
-    private void handleButtonActionUserLogin() {
-            try {
+    public void RegresarLoigAdmin(){
+        try {
                 // Obtener el Stage actual
-                Stage currentStage = (Stage) botonUser.getScene().getWindow();
+                Stage currentStage = (Stage) RegresarButton.getScene().getWindow();
 
-                // Cargar el archivo FXML para LoginUsuario
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Presentation/LoginUsuario.fxml"));
+                // Cargar el archivo FXML para Login
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Presentation/LoginAdmin.fxml"));
                 Parent root = loader.load();
 
                 // Cambiar la escena del Stage actual
                 currentStage.setScene(new Scene(root));
-                currentStage.setTitle("Login Usuario");
+                currentStage.setTitle("Login");
 
             } catch (IOException e) {
                 e.printStackTrace();
-                Alert alert = new Alert(AlertType.ERROR);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("No se pudo cargar la interfaz de usuario.");
                 alert.showAndWait();
             }
     }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+    
 }

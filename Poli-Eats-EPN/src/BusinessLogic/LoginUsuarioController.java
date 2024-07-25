@@ -18,6 +18,8 @@ public class LoginUsuarioController implements Initializable {
 
     @FXML
     private Button Regresar;
+    @FXML
+    private Button SingUp;
     
     @FXML
     public void RegresarLoginAdmOrUser(){
@@ -27,6 +29,29 @@ public class LoginUsuarioController implements Initializable {
 
                 // Cargar el archivo FXML para Login
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Presentation/LoginAdminOrUser.fxml"));
+                Parent root = loader.load();
+
+                // Cambiar la escena del Stage actual
+                currentStage.setScene(new Scene(root));
+                currentStage.setTitle("Login");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("No se pudo cargar la interfaz de usuario.");
+                alert.showAndWait();
+            }
+    }
+      @FXML
+    public void SolicitarCuenta(){
+        try {
+                // Obtener el Stage actual
+                Stage currentStage = (Stage) SingUp.getScene().getWindow();
+
+                // Cargar el archivo FXML para Login
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Presentation/SingUpUsuario.fxml"));
                 Parent root = loader.load();
 
                 // Cambiar la escena del Stage actual
