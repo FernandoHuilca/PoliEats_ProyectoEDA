@@ -64,7 +64,7 @@ class Administrador{
 
 }
 
-AppBar -l-> Ganancias
+AppBar --> Ganancias
 AppBar -l-> ProductoDeVenta
 AppBar -u-> Cliente
 Cliente -r-> HistorialDeCompras
