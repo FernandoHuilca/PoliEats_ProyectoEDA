@@ -11,18 +11,20 @@ class Ganancias{
 
 }
 
-abstract class ProductosDeVenta{
+abstract class ProductoDeVenta{
     nombre: String
     precio: double
     Stock: int
 }
 
 class Cliente{
-
+    nombre: String
+    correo: String
+    cuentaDeBanco: String
 }
 
 class HistorialDeCompras{
-
+    Factura[]
 }
 
 class Factura{
@@ -34,19 +36,47 @@ class CarritoDeCompra{
 }
 
 class Item{
-
+    cantidad: int
+    producto: ProductoDeVenta
 }
 
 class Bebida{
 
 }
 
+class Snacks{
+
+}
+
+class Bocadillo{
+
+}
+
+class ComidaRapida{
+
+}
+
+class Postre{
+
+}
+
+class Administrador{
+
+}
+
 AppBar -l-> Ganancias
-AppBar -r-> ProductosDeVenta
+AppBar -l-> ProductoDeVenta
 AppBar -u-> Cliente
-Cliente -l-> HistorialDeCompras
-HistorialDeCompras -u-> Factura
+Cliente -r-> HistorialDeCompras
+HistorialDeCompras -r-> Factura
 Cliente -u-> CarritoDeCompra
 CarritoDeCompra -r-> Item
-ProductosDeVenta <|-- Bebida
+AppBar -u-> Administrador
+Item --> ProductoDeVenta
+ProductoDeVenta <|-- Bebida
+ProductoDeVenta <|-- ComidaRapida
+ProductoDeVenta <|-- Snacks
+ProductoDeVenta <|-r- Bocadillo
+ProductoDeVenta <|-- Postre
+
 @enduml
