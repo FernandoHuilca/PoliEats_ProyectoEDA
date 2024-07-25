@@ -37,6 +37,9 @@ class Item{
 
 }
 
+class Bebida{
+
+}
 
 AppBar -l-> Ganancias
 AppBar -r-> ProductosDeVenta
@@ -45,27 +48,5 @@ Cliente -l-> HistorialDeCompras
 HistorialDeCompras -u-> Factura
 Cliente -u-> CarritoDeCompra
 CarritoDeCompra -r-> Item
+ProductosDeVenta <|-- Bebida
 @enduml
-
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
-}
-
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
-}
