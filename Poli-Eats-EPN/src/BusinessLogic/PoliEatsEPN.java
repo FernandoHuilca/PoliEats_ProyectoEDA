@@ -20,7 +20,7 @@ public class PoliEatsEPN extends Application{
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Presentation/SaludoBienvenida.fxml"));
         Parent root = loader.load();
-        
+        // Hola
         SaludoBienvenidaController controller = loader.getController();
         controller.setStage(primaryStage);
         controller.start();
