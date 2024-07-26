@@ -11,9 +11,9 @@
       <Button fx:id="RegresarButton" layoutX="281.0" layoutY="30.0" mnemonicParsing="false" onAction="#RegresarLoginAdmOrUser" text="Regresar" />
       <Label layoutX="113.0" layoutY="257.0" text="Contraseña:" />
       <Label layoutX="112.0" layoutY="163.0" text="Correo: " />
-      <TextField layoutX="112.0" layoutY="192.0" />
-      <PasswordField layoutX="113.0" layoutY="284.0" />
-      <Button layoutX="155.0" layoutY="344.0" mnemonicParsing="false" text="Log In" />
+      <TextField fx:id="txtAdministrador" layoutX="112.0" layoutY="192.0" />
+      <PasswordField fx:id="txtContraseña" layoutX="113.0" layoutY="284.0" />
+      <Button fx:id="LogIn" layoutX="155.0" layoutY="344.0" mnemonicParsing="false" onAction="#LoginAcceso" text="Log In" />
       <Label layoutX="64.0" layoutY="415.0" text="Solicitar cuenta de administrador: " />
       <Button fx:id="SolicitarButton" layoutX="263.0" layoutY="411.0" mnemonicParsing="false" onAction="#SolicitarCuentaAdmin" text="Solicitar" />
    </children>

@@ -9,10 +9,10 @@
 <AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.LoginUsuarioController">
    <children>
       <Label layoutX="112.0" layoutY="262.0" text="Contraseña:" />
-      <TextField layoutX="112.0" layoutY="214.0" />
-      <Label layoutX="112.0" layoutY="175.0" text="Email: " />
-      <PasswordField layoutX="113.0" layoutY="295.0" />
-      <Button layoutX="161.0" layoutY="354.0" mnemonicParsing="false" text="Log In " />
+      <TextField fx:id="txtUsuario" layoutX="112.0" layoutY="214.0" />
+      <Label layoutX="112.0" layoutY="175.0" text="Usuario:" />
+      <PasswordField fx:id="txtContraseña" layoutX="113.0" layoutY="295.0" />
+      <Button fx:id="LogIn" layoutX="161.0" layoutY="354.0" mnemonicParsing="false" onAction="#LoginAcceso" text="Log In " />
       <Label layoutX="98.0" layoutY="433.0" text="No tienes cuenta?" />
       <Button fx:id="SingUp" layoutX="203.0" layoutY="429.0" mnemonicParsing="false" onAction="#SolicitarCuenta" text="Sing Up" />
       <Button fx:id="Regresar" layoutX="292.0" layoutY="22.0" mnemonicParsing="false" onAction="#RegresarLoginAdmOrUser" text="Regresar" />
