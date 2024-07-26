@@ -6,7 +6,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
-public class VerificacionCodigoCorreo {
+public class EnviarCorreosElectronicos {
      public static void enviarMensajeDeVerificacionDeRegistro(String correo, String codigoVerificacion, String usuario) {
         // Configuración de las propiedades del servidor de correo
         Properties props = new Properties();

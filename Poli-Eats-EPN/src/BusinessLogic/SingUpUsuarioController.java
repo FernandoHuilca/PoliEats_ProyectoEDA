@@ -76,7 +76,7 @@ public class SingUpUsuarioController implements Initializable {
 
         // Generar y enviar el código de verificación
         codigoVerificacion = generarCodigoRandom(1000, 9999);
-        VerificacionCodigoCorreo.enviarMensajeDeVerificacionDeRegistro(correo, codigoVerificacion, usuario);
+        EnviarCorreosElectronicos.enviarMensajeDeVerificacionDeRegistro(correo, codigoVerificacion, usuario);
 
         // Mostrar la ventana de verificación
         mostrarVentanaVerificacion();
