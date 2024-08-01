@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.CarritoController">
+    <stylesheets>
+        <URL value="@/Presentation/carrito.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="135.0" layoutY="84.0" text="Carrito" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="Century" size="31.0" />
+         </font>
+      </Label>
+      <Button fx:id="RegresarButton" layoutX="290.0" layoutY="52.0" mnemonicParsing="false" onAction="#RegresarInterzasPrincipal" style="-fx-cursor: hand;" text="Regresar" />
+      <Label layoutX="48.0" layoutY="333.0" text="Resumen" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="Century" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="confirmarYPagar" layoutX="132.0" layoutY="554.0" mnemonicParsing="false" onAction="#irALaInterfazDePago" style="-fx-cursor: hand;" text="Confirmar y Pagar" textAlignment="CENTER" />
+   </children>
+</AnchorPane>
