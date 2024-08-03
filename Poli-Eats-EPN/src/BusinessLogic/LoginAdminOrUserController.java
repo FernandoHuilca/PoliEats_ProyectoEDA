@@ -26,7 +26,7 @@ public class LoginAdminOrUserController implements Initializable {
     }    
 
     @FXML
-    private void handleButtonActionAdminLogin() {
+    public void handleButtonActionAdminLogin() {
           try {
                 // Obtener el Stage actual
                 Stage currentStage = (Stage) botonAdmin.getScene().getWindow();

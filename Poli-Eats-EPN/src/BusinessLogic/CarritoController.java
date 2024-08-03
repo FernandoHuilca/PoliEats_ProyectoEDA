@@ -12,37 +12,36 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
- * @author Fernando_Huilca
+ * @author PC
  */
-public class PantallaInicioBarUsuariosController implements Initializable {
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }   
+public class CarritoController implements Initializable {
     
     @FXML
-    private Button Carrito;
+    private Button RegresarButton;
+    @FXML
+    private Button confirmarYPagar;
+    
     
     @FXML
-    public void accederCarrito(){
-        cambiarVentana("/Presentation/Carrito.fxml","Pantalla del Carrito");
+    public void RegresarInterzasPrincipal(){
+        cambiarVentana("/Presentation/PantallaInicioBarUsuarios.fxml","Pantalla Inicio del Bar");
     }
-
-     
-
+    @FXML
+    public void irALaInterfazDePago(){
+        cambiarVentana("/Presentation/PantallaDeCompra.fxml","Pantalla Finalización de Compra");
+    }
+    
     private void cambiarVentana(String rutaFXML, String titulo) {
         try {
             // Obtener el Stage actual
-            Stage currentStage = (Stage) Carrito.getScene().getWindow();
+            Stage currentStage = (Stage) RegresarButton.getScene().getWindow();
 
             // Cargar el archivo FXML
             FXMLLoader loader = new FXMLLoader(getClass().getResource(rutaFXML));
@@ -53,9 +52,25 @@ public class PantallaInicioBarUsuariosController implements Initializable {
             currentStage.setTitle(titulo);
 
         } catch (IOException e) {
-            System.out.println("No puedo acceder");
+            mostrarAlerta("Error", "No se pudo cargar la interfaz de usuario.");
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
     
 }

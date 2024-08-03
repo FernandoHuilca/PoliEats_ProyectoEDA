@@ -18,31 +18,30 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author Fernando_Huilca
+ * @author PC
  */
-public class PantallaInicioBarUsuariosController implements Initializable {
+public class PantallaDeCompraController implements Initializable {
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }   
+    }    
     
     @FXML
-    private Button Carrito;
+    private Button regresarCarritoButton; 
     
     @FXML
-    public void accederCarrito(){
-        cambiarVentana("/Presentation/Carrito.fxml","Pantalla del Carrito");
+    public void regresarALaPantallaDelCarrito(){
+        cambiarVentana("/Presentation/Carrito.fxml","Pantalla del Bar");
     }
-
-     
 
     private void cambiarVentana(String rutaFXML, String titulo) {
         try {
             // Obtener el Stage actual
-            Stage currentStage = (Stage) Carrito.getScene().getWindow();
+            Stage currentStage = (Stage) regresarCarritoButton.getScene().getWindow();
 
             // Cargar el archivo FXML
             FXMLLoader loader = new FXMLLoader(getClass().getResource(rutaFXML));
@@ -53,7 +52,6 @@ public class PantallaInicioBarUsuariosController implements Initializable {
             currentStage.setTitle(titulo);
 
         } catch (IOException e) {
-            System.out.println("No puedo acceder");
             e.printStackTrace();
         }
     }
