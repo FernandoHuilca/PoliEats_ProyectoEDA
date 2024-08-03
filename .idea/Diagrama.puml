@@ -1,0 +1,82 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class AppBar{
+    producto[]
+    cliente[]
+    administrador[]
+}
+
+class Ganancias{
+
+}
+
+abstract class ProductoDeVenta{
+    nombre: String
+    precio: double
+    Stock: int
+}
+
+class Cliente{
+    nombre: String
+    correo: String
+    cuentaDeBanco: String
+}
+
+class HistorialDeCompras{
+    Factura[]
+}
+
+class Factura{
+
+}
+
+class CarritoDeCompra{
+    Item[]
+}
+
+class Item{
+    cantidad: int
+    producto: ProductoDeVenta
+}
+
+class Bebida{
+
+}
+
+class Snacks{
+
+}
+
+class Bocadillo{
+
+}
+
+class ComidaRapida{
+
+}
+
+class Postre{
+
+}
+
+class Administrador{
+
+}
+
+AppBar --> Ganancias
+AppBar -l-> ProductoDeVenta
+AppBar -u-> Cliente
+Cliente -r-> HistorialDeCompras
+HistorialDeCompras -r-> Factura
+Cliente -u-> CarritoDeCompra
+CarritoDeCompra -r-> Item
+AppBar -u-> Administrador
+Item --> ProductoDeVenta
+ProductoDeVenta <|-- Bebida
+ProductoDeVenta <|-- ComidaRapida
+ProductoDeVenta <|-- Snacks
+ProductoDeVenta <|-r- Bocadillo
+ProductoDeVenta <|-- Postre
+
+@enduml
