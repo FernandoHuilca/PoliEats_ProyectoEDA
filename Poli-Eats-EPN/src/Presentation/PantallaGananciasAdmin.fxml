@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" style="-fx-background-color: ffff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="BusinessLogic.PantallaGananciasAdminController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="113.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Downloads/Ganancias.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="134.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganancias">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="73.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganancias hasta el momento:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="gananciaTotal" layoutX="112.0" layoutY="355.0" />
+      <Text layoutX="111.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganancias restante:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="gananciaRestante" layoutX="114.0" layoutY="449.0" />
+      <Button layoutX="154.0" layoutY="544.0" mnemonicParsing="false" onAction="#btnRegresar" text="Regresar" />
+   </children>
+</AnchorPane>
