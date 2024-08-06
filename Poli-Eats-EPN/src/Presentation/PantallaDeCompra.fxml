@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.PantallaDeCompraController">
+<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.PantallaDeCompraController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="93.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
          <image>

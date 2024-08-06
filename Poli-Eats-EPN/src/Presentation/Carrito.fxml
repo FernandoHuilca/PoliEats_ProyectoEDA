@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.CarritoController">
+<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.CarritoController">
     <stylesheets>
         <URL value="@/Presentation/carrito.css" />
     </stylesheets>

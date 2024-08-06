@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package BusinessLogic;
+package BusinessLogic.Controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,30 +18,31 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author PC
+ * @author Fernando_Huilca
  */
-public class PantallaDeCompraController implements Initializable {
-
+public class PantallaInicioBarUsuariosController implements Initializable {
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }   
     
     @FXML
-    private Button regresarCarritoButton; 
+    private Button Carrito;
     
     @FXML
-    public void regresarALaPantallaDelCarrito(){
-        cambiarVentana("/Presentation/Carrito.fxml","Pantalla del Bar");
+    public void accederCarrito(){
+        cambiarVentana("/Presentation/Carrito.fxml","Pantalla del Carrito");
     }
+
+     
 
     private void cambiarVentana(String rutaFXML, String titulo) {
         try {
             // Obtener el Stage actual
-            Stage currentStage = (Stage) regresarCarritoButton.getScene().getWindow();
+            Stage currentStage = (Stage) Carrito.getScene().getWindow();
 
             // Cargar el archivo FXML
             FXMLLoader loader = new FXMLLoader(getClass().getResource(rutaFXML));
@@ -52,6 +53,7 @@ public class PantallaDeCompraController implements Initializable {
             currentStage.setTitle(titulo);
 
         } catch (IOException e) {
+            System.out.println("No puedo acceder");
             e.printStackTrace();
         }
     }
