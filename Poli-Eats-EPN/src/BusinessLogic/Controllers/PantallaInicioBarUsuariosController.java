@@ -29,33 +29,6 @@ public class PantallaInicioBarUsuariosController implements Initializable {
         // TODO
     }   
     
-    @FXML
-    private Button Carrito;
-    
-    @FXML
-    public void accederCarrito(){
-        cambiarVentana("/Presentation/Carrito.fxml","Pantalla del Carrito");
-    }
-
-     
-
-    private void cambiarVentana(String rutaFXML, String titulo) {
-        try {
-            // Obtener el Stage actual
-            Stage currentStage = (Stage) Carrito.getScene().getWindow();
-
-            // Cargar el archivo FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(rutaFXML));
-            Parent root = loader.load();
-
-            // Cambiar la escena del Stage actual
-            currentStage.setScene(new Scene(root));
-            currentStage.setTitle(titulo);
-
-        } catch (IOException e) {
-            System.out.println("No puedo acceder");
-            e.printStackTrace();
-        }
-    }
+  
     
 }
