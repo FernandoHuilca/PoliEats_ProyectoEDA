@@ -1,5 +1,6 @@
-package BusinessLogic;
+package BusinessLogic.Controllers;
 
+import BusinessLogic.EnviarCorreosElectronicos;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;

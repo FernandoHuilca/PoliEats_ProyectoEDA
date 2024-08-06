@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="BusinessLogic.SaludoBienvenidaController">
+<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="BusinessLogic.Controllers.SaludoBienvenidaController">
    <children>
       <Label layoutX="126.0" layoutY="198.0" text="Bienvenido">
          <font>

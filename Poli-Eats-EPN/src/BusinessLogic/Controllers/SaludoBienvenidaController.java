@@ -1,4 +1,4 @@
-package BusinessLogic;
+package BusinessLogic.Controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;

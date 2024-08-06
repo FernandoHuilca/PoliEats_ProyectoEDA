@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.LoginAdminController">
+<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.LoginAdminController">
    <children>
       <Button fx:id="RegresarButton" layoutX="281.0" layoutY="30.0" mnemonicParsing="false" onAction="#RegresarLoginAdmOrUser" text="Regresar" />
       <Label layoutX="113.0" layoutY="257.0" text="Contraseña:" />
