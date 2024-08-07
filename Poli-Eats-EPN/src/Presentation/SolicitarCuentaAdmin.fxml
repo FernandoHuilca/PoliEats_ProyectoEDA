@@ -6,15 +6,15 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.SolicitarCuentaAdminController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.SolicitarCuentaAdminController">
    <children>
-      <Label layoutX="115.0" layoutY="340.0" prefHeight="18.0" prefWidth="86.0" text="Contraseña:" />
-      <TextField layoutX="114.0" layoutY="211.0" />
-      <Label layoutX="114.0" layoutY="183.0" text="Nombre: " />
-      <Label layoutX="114.0" layoutY="259.0" prefHeight="0.0" prefWidth="50.0" text="Correo: " />
-      <TextField layoutX="114.0" layoutY="291.0" />
-      <PasswordField layoutX="115.0" layoutY="371.0" />
-      <Button fx:id="Solicitar" layoutX="158.0" layoutY="436.0" mnemonicParsing="false" onAction="#SolicitarCuenta" text="Solicitar" />
-      <Button fx:id="RegresarButton" layoutX="276.0" layoutY="36.0" mnemonicParsing="false" onAction="#RegresarLoigAdmin" text="Regresar" />
+      <Button fx:id="RegresarButton" layoutX="571.0" layoutY="71.0" mnemonicParsing="false" onAction="#RegresarLongInAdmin" text="Back" />
+      <Button fx:id="SolicitarButton" layoutX="443.0" layoutY="422.0" mnemonicParsing="false" onAction="#Solicitar" text="Solicitar" />
+      <Label layoutX="388.0" layoutY="169.0" text="Nombre:" />
+      <Label layoutX="392.0" layoutY="255.0" text="Correo:" />
+      <Label layoutX="392.0" layoutY="328.0" text="Contraseña:" />
+      <PasswordField fx:id="txtContraseña" layoutX="390.0" layoutY="355.0" />
+      <TextField fx:id="txtNombre" layoutX="390.0" layoutY="198.0" />
+      <TextField fx:id="txtCorreo" layoutX="390.0" layoutY="283.0" />
    </children>
 </AnchorPane>

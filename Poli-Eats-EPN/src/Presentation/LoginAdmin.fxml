@@ -5,16 +5,20 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.LoginAdminController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.LoginAdminController">
    <children>
-      <Button fx:id="RegresarButton" layoutX="281.0" layoutY="30.0" mnemonicParsing="false" onAction="#RegresarLoginAdmOrUser" text="Regresar" />
-      <Label layoutX="113.0" layoutY="257.0" text="Contraseña:" />
-      <Label layoutX="112.0" layoutY="163.0" text="Correo: " />
-      <TextField fx:id="txtAdministrador" layoutX="112.0" layoutY="192.0" />
-      <PasswordField fx:id="txtContraseña" layoutX="113.0" layoutY="284.0" />
-      <Button fx:id="LogIn" layoutX="155.0" layoutY="344.0" mnemonicParsing="false" onAction="#LoginAcceso" text="Log In" />
-      <Label layoutX="64.0" layoutY="415.0" text="Solicitar cuenta de administrador: " />
-      <Button fx:id="SolicitarButton" layoutX="263.0" layoutY="411.0" mnemonicParsing="false" onAction="#SolicitarCuentaAdmin" text="Solicitar" />
+      <Pane layoutX="243.0" layoutY="115.0" prefHeight="470.0" prefWidth="702.0" style="-fx-background-color: #F5E7C3;">
+         <children>
+            <Label layoutX="124.0" layoutY="87.0" text="Nombre:" />
+            <TextField fx:id="txtAdministrador" layoutX="124.0" layoutY="112.0" prefHeight="25.0" prefWidth="272.0" />
+            <Label layoutX="128.0" layoutY="188.0" text="Contraseña:" />
+            <PasswordField fx:id="txtContraseña" layoutX="128.0" layoutY="216.0" prefHeight="25.0" prefWidth="272.0" />
+            <Button fx:id="LogIn" layoutX="228.0" layoutY="290.0" mnemonicParsing="false" onAction="#LoginAcceso" prefWidth="62.0" text="Log In" />
+            <Label layoutX="147.0" layoutY="361.0" text="Solicitar cuenta de administrador: " />
+            <Button fx:id="SolicitarButton" layoutX="347.0" layoutY="357.0" mnemonicParsing="false" onAction="#SolicitarCuentaAdmin" text="Solicitar" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

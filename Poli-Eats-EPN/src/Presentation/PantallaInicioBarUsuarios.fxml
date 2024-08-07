@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.PantallaInicioBarUsuariosController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.PantallaInicioBarUsuariosController">
    <children>
-      <Label layoutX="89.0" layoutY="187.0" text="AQUI POR FIN">
+      <Label layoutX="465.0" layoutY="360.0" text="AQUI POR FIN">
          <font>
             <Font name="Bookshelf Symbol 7" size="27.0" />
          </font>

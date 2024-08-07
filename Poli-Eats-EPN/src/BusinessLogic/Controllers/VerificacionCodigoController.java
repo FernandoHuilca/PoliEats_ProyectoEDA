@@ -24,16 +24,16 @@ public class VerificacionCodigoController {
 
     private String codigoVerificacion;
     private int intentosRestantes;
-    private SingUpUsuarioController singUpController;
-    private String usuario;
+    private SolicitarCuentaAdminController solicitarCuentaAdminController;
+    private String administrador;
     private String contraseña;
 
-    public void setDatos(String codigoVerificacion, int intentosMaximos, SingUpUsuarioController singUpController) {
+    public void setDatos(String codigoVerificacion, int intentosMaximos, SolicitarCuentaAdminController solicitarCuentaAdminController) {
         this.codigoVerificacion = codigoVerificacion;
         this.intentosRestantes = intentosMaximos;
-        this.singUpController = singUpController;
-        this.usuario = singUpController.txtNombre.getText();
-        this.contraseña = singUpController.txtContraseña.getText();
+        this.solicitarCuentaAdminController = solicitarCuentaAdminController;
+        this.administrador = this.solicitarCuentaAdminController.txtNombre.getText();
+        this.contraseña = this.solicitarCuentaAdminController.txtContraseña.getText();
         actualizarIntentosRestantes();
     }
 
@@ -45,12 +45,12 @@ public class VerificacionCodigoController {
             Stage currentStage = (Stage) regresar.getScene().getWindow();
 
             // Cargar el archivo FXML para Login
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Presentation/LoginUsuario.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Presentation/LoginAdmin.fxml"));
             Parent root = loader.load();
 
             // Cambiar la escena del Stage actual
             currentStage.setScene(new Scene(root));
-            currentStage.setTitle("Login");
+            currentStage.setTitle("LoginAdmin");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -67,7 +67,7 @@ public class VerificacionCodigoController {
         String codigoIngresado = txtCodigoVerificacion.getText();
 
         if (codigoVerificacion.equals(codigoIngresado)) {
-            singUpController.guardarUsuarioYRegresar(usuario, contraseña);
+            solicitarCuentaAdminController.guardarAdministradoresYRegresar(administrador, contraseña);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Correcto");
             alert.setHeaderText(null);

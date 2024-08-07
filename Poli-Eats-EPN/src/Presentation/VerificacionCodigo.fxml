@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="667.0" prefWidth="375.0" spacing="10" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.VerificacionCodigoController">
+<VBox alignment="CENTER" prefHeight="700.0" prefWidth="1100.0" spacing="10" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.VerificacionCodigoController">
     <children>
         <Label text="Ingrese el código de verificación:" />
         <TextField fx:id="txtCodigoVerificacion" />

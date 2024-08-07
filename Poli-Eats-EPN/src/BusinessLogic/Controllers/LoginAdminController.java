@@ -20,8 +20,7 @@ import javafx.stage.Stage;
 
 public class LoginAdminController implements Initializable {
     private final String archivoAdministradoresContraseñas = "src/Data/Login/NombresContraseniasAdministradores.txt";
-    @FXML
-    private Button RegresarButton;
+  
     @FXML
     private Button SolicitarButton;
      @FXML
@@ -31,11 +30,6 @@ public class LoginAdminController implements Initializable {
     @FXML
     private PasswordField txtContraseña;
 
-    
-    @FXML
-    public void RegresarLoginAdmOrUser(){
-        cambiarVentana("/Presentation/LoginAdminOrUser.fxml","Login admin");
-    }
     
     @FXML
     public void SolicitarCuentaAdmin(){
