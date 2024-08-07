@@ -21,10 +21,6 @@ public abstract class ProductoDeVenta {
         return nombre + " - $" + precio + " Stock : " + stock;
     }
 
-    public double getPrecio() {
-        return precio;
-    }
-
     public boolean setNombre(String nombre) {
         this.nombre = nombre;
         return true;
@@ -38,4 +34,16 @@ public abstract class ProductoDeVenta {
         this.stock = cantidadDeStock;
         return true;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+    public int getStock(){
+        return stock;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
 }

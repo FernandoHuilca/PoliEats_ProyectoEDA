@@ -46,13 +46,13 @@ public class Main {
 
 
         System.out.println(ANSI_YELLOW +"CASO 3. Imprimir Productos de Venta __________________________"+ ANSI_RESET);
-        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductos(); i++) {
-            System.out.println("Producto " + i + " " + appBarPoliEats.getProducto(i));
+        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventario(); i++) {
+            System.out.println("Producto " + i + " " + appBarPoliEats.getProductoDelInventario(i));
         }
 
 
         System.out.println(ANSI_YELLOW +"CASO 3.1: Imprimir un producto con un índice fuera del rango"+ ANSI_RESET);
-        System.out.println("PRODUCTO FUERA DE RANGO " + appBarPoliEats.getProducto(4));
+        System.out.println("PRODUCTO FUERA DE RANGO " + appBarPoliEats.getProductoDelInventario(4));
 
         System.out.println("CASO 4. Imprimir administradores __________________________");
         for (int i = 0; i < appBarPoliEats.getAdministradores().length; i++) {
@@ -67,8 +67,8 @@ public class Main {
            }
            else System.out.println("ERROR No se pudo eliminar a la izquierda");
 
-           for (int i = 0; i < appBarPoliEats.getNúmeroDeProductos(); i++) {
-            System.out.println("Producto " + i + " " + appBarPoliEats.getProducto(i));
+           for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventario(); i++) {
+            System.out.println("Producto " + i + " " + appBarPoliEats.getProductoDelInventario(i));
            }
 
 
@@ -78,8 +78,8 @@ public class Main {
         }
         else System.out.println("ERROR No se pudo eliminar a la derecha");
 
-        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductos(); i++) {
-            System.out.println("Producto " + i + " " + appBarPoliEats.getProducto(i));
+        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventario(); i++) {
+            System.out.println("Producto " + i + " " + appBarPoliEats.getProductoDelInventario(i));
         }
 
 
@@ -90,8 +90,8 @@ public class Main {
         }
         else System.out.println("ERROR No se pudo eliminar en el índice " + índice);
 
-        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductos(); i++) {
-            System.out.println("Producto " + i + " " + appBarPoliEats.getProducto(i));
+        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventario(); i++) {
+            System.out.println("Producto " + i + " " + appBarPoliEats.getProductoDelInventario(i));
         }
 
 
@@ -99,8 +99,8 @@ public class Main {
         appBarPoliEats.agregarProductoIzquierda(nuevoProducto);
         //Comprando aun
         ListaSimple<Item> items = new ListaSimple<>();
-        items.agregarALaDerecha(new Item(appBarPoliEats.getProducto(0), 3));
-        items.agregarALaDerecha(new Item(appBarPoliEats.getProducto(0), 4));
+        items.agregarALaDerecha(new Item(appBarPoliEats.getProductoDelInventario(0), 3));
+        items.agregarALaDerecha(new Item(appBarPoliEats.getProductoDelInventario(0), 4));
         //Aqui das click
         Pedido nuevoPedido = new Pedido("FernandoHuilca", items);
         Pedido nuevoPedido1 = new Pedido("MateoQuisilema", items);
@@ -153,24 +153,35 @@ public class Main {
         appBarPoliEats.modificarProductoPrecio(0, 0.30);
         appBarPoliEats.modificarProductoStock(0, 15000);
         appBarPoliEats.imprimirProductosPorCategoría();
-        System.out.println(ANSI_YELLOW +"Caso 13 : Acumular ganancias por día ____________________________________"+ ANSI_RESET);
+        System.out.println(ANSI_YELLOW +"Caso 13 : Método que desea mi Mateo Simbaña ____________________________________"+ ANSI_RESET);
+        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventario(); i++){
+            System.out.println("Nombre: " + appBarPoliEats.getProductoDelInventario(i).getNombre());
+            System.out.println("Stock: " + appBarPoliEats.getProductoDelInventario(i).getStock());
+            System.out.println("Precio: " + appBarPoliEats.getProductoDelInventario(i).getPrecio());
+        }
+
+        System.out.println(ANSI_YELLOW +"Caso 14 : Método que desea mi Mateo Simbaña get Producto Por categoría ____________________________________"+ ANSI_RESET);
+        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventarioBebidas(); i++){
+            System.out.println("Nombre: " + appBarPoliEats.getProductosDelInventarioBebidas()[i].getNombre());
+            System.out.println("Stock: " + appBarPoliEats.getProductosDelInventarioBebidas()[i].getStock());
+            System.out.println("Precio: " + appBarPoliEats.getProductosDelInventarioBebidas()[i].getPrecio());
+        }
+        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventarioPostres(); i++){
+            System.out.println("Nombre: " + appBarPoliEats.getProductosDelInventarioPostres()[i].getNombre());
+            System.out.println("Stock: " + appBarPoliEats.getProductosDelInventarioPostres()[i].getStock());
+            System.out.println("Precio: " + appBarPoliEats.getProductosDelInventarioPostres()[i].getPrecio());
+        }
+        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventarioComidaRápida(); i++){
+            System.out.println("Nombre: " + appBarPoliEats.getProductosDelInventarioComidaRápida()[i].getNombre());
+            System.out.println("Stock: " + appBarPoliEats.getProductosDelInventarioComidaRápida()[i].getStock());
+            System.out.println("Precio: " + appBarPoliEats.getProductosDelInventarioComidaRápida()[i].getPrecio());
+        }
+        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventarioSnacks(); i++){
+            System.out.println("Nombre: " + appBarPoliEats.getProductosDelInventarioSnacks()[i].getNombre());
+            System.out.println("Stock: " + appBarPoliEats.getProductosDelInventarioSnacks()[i].getStock());
+            System.out.println("Precio: " + appBarPoliEats.getProductosDelInventarioSnacks()[i].getPrecio());
+        }
 
 
-
-        /*
-        AppBarPoliEats appBarPoliEats = new AppBarPoliEats();
-
-        String nombre = "Fernando Huilca";
-        String correo = "fernandohuilca3@gmail.com";
-        String contraseña = "1234";
-
-
-        System.out.println("CASO 1. Agregar Usuario a la app __________________________");
-        appBarPoliEats.agregarUsuario(nombre, correo, contraseña);
-
-        System.out.println("CASO 2. Agregar un producto al inventario __________________________");
-        ProductoDeVenta nuevoProducto = new Bebida("CocaCola",0.25);
-        appBarPoliEats.agregarProducto(nuevoProducto);
-        */
     }
 }

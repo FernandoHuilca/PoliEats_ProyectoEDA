@@ -42,11 +42,11 @@ public class AppBarPoliEats {
         return administradores[numAdministrador].getNombre();
     }
 
-    public int getNúmeroDeProductos() {
+    public int getNúmeroDeProductosDelInventario() {
         return listSimpleProductos.getNúmeroDeDatos();
     }
 
-    public ProductoDeVenta getProducto(int i) {
+    public ProductoDeVenta getProductoDelInventario(int i) {
         return listSimpleProductos.getDato(i);
     }
 
@@ -176,4 +176,98 @@ public class AppBarPoliEats {
     public boolean modificarProductoStock(int índiceDelProducto, int cantidadDeStock) {
         return listSimpleProductos.getDato(índiceDelProducto).setStock(cantidadDeStock);
     }
+
+    // Métodos para contar productos por categoría
+    public int getNúmeroDeProductosDelInventarioBebidas() {
+        int count = 0;
+        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
+            if (listSimpleProductos.getDato(i) instanceof Bebida) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int getNúmeroDeProductosDelInventarioSnacks() {
+        int count = 0;
+        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
+            if (listSimpleProductos.getDato(i) instanceof Snack) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int getNúmeroDeProductosDelInventarioComidaRápida() {
+        int count = 0;
+        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
+            if (listSimpleProductos.getDato(i) instanceof ComidaRápida) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int getNúmeroDeProductosDelInventarioPostres() {
+        int count = 0;
+        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
+            if (listSimpleProductos.getDato(i) instanceof Postre) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+    public ProductoDeVenta[] getProductosDelInventarioBebidas() {
+        int númeroDeBebidas = getNúmeroDeProductosDelInventarioBebidas();
+        ProductoDeVenta[] auxProductos = new ProductoDeVenta[númeroDeBebidas];
+        int contador = 0;
+        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
+            if (listSimpleProductos.getDato(i) instanceof Bebida) {
+                auxProductos[contador] = listSimpleProductos.getDato(i);
+                contador++;
+            }
+        }
+        return auxProductos;
+    }
+    public ProductoDeVenta[] getProductosDelInventarioSnacks() {
+        int númeroDeSnacks = getNúmeroDeProductosDelInventarioSnacks();
+        ProductoDeVenta[] auxProductos = new ProductoDeVenta[númeroDeSnacks];
+        int contador = 0;
+        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
+            if (listSimpleProductos.getDato(i) instanceof Snack) {
+                auxProductos[contador] = listSimpleProductos.getDato(i);
+                contador++;
+            }
+        }
+        return auxProductos;
+    }
+
+    public ProductoDeVenta[] getProductosDelInventarioComidaRápida() {
+        int númeroDeComidaRapida = getNúmeroDeProductosDelInventarioComidaRápida();
+        ProductoDeVenta[] auxProductos = new ProductoDeVenta[númeroDeComidaRapida];
+        int contador = 0;
+        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
+            if (listSimpleProductos.getDato(i) instanceof ComidaRápida) {
+                auxProductos[contador] = listSimpleProductos.getDato(i);
+                contador++;
+            }
+        }
+        return auxProductos;
+    }
+
+    public ProductoDeVenta[] getProductosDelInventarioPostres() {
+        int númeroDePostres = getNúmeroDeProductosDelInventarioPostres();
+        ProductoDeVenta[] auxProductos = new ProductoDeVenta[númeroDePostres];
+        int contador = 0;
+        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
+            if (listSimpleProductos.getDato(i) instanceof Postre) {
+                auxProductos[contador] = listSimpleProductos.getDato(i);
+                contador++;
+            }
+        }
+        return auxProductos;
+    }
+
 }
