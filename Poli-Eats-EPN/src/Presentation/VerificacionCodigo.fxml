@@ -12,13 +12,13 @@
     <children>
       <Pane prefHeight="589.0" prefWidth="1060.0">
          <children>
-              <Label layoutX="359.0" layoutY="245.0" text="Ingrese el código de verificación:">
+              <Label layoutX="386.0" layoutY="240.0" text="Ingrese el código de verificación:">
                <font>
                   <Font name="Arial Black" size="16.0" />
                </font>
             </Label>
-              <TextField fx:id="txtCodigoVerificacion" layoutX="209.0" layoutY="279.0" prefHeight="26.0" prefWidth="589.0" />
-              <Button fx:id="btnVerificarCodigo" layoutX="439.0" layoutY="316.0" onAction="#verificarCodigo" style="-fx-background-color: #FCFEFD;" text="Verificar Código">
+              <TextField fx:id="txtCodigoVerificacion" layoutX="236.0" layoutY="274.0" prefHeight="26.0" prefWidth="589.0" />
+              <Button fx:id="btnVerificarCodigo" layoutX="466.0" layoutY="311.0" onAction="#verificarCodigo" style="-fx-background-color: #FCFEFD;" text="Verificar Código">
                <font>
                   <Font name="Arial Black" size="13.0" />
                </font>
@@ -28,7 +28,7 @@
                   <Font name="Arial Black" size="13.0" />
                </font>
             </Button>
-              <Label fx:id="lblIntentosRestantes" layoutX="500.0" layoutY="364.0" prefHeight="18.0" prefWidth="16.0" />
+              <Label fx:id="lblIntentosRestantes" layoutX="479.0" layoutY="355.0" prefHeight="18.0" prefWidth="199.0" />
          </children>
       </Pane>
     </children>
