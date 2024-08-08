@@ -8,16 +8,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ProgressBar;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author Fernando_Huilca
- */
 public class SaludoBienvenidaController implements Initializable {
 
     private Stage stage;
+
+    @FXML
+    private ProgressBar progressBar;
 
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -33,20 +32,25 @@ public class SaludoBienvenidaController implements Initializable {
     }
 
     private void showWelcomeScreen() {
-        // La pantalla de bienvenida ya se cargó en el método start de Main
+        final int loadingTime = 2000; // 2 segundos
+        final int steps = 100;
+        final double stepTime = loadingTime / (double) steps;
 
-        // Simula un tiempo de carga de 3 segundos
         new Thread(() -> {
-            try {
-                Thread.sleep(2000); // 2 segundos
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            for (int i = 0; i <= steps; i++) {
+                final int progress = i;
+                Platform.runLater(() -> progressBar.setProgress(progress / (double) steps));
+                try {
+                    Thread.sleep((long) stepTime);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
             Platform.runLater(() -> showExplanationScreen());
         }).start();
     }
 
-   private void showExplanationScreen() {
+    private void showExplanationScreen() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Presentation/PantallaProductos.fxml"));
             Parent root = loader.load();
