@@ -11,6 +11,7 @@ import BusinessLogic.Postre;
 import BusinessLogic.ProductoDeVenta;
 import BusinessLogic.Snack;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,6 +26,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -33,6 +35,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
  */
 public class PantallaProductosController implements Initializable {
     
+    @FXML
+    private Button btnModificar;
+    
+    @FXML
+    private Button btnEliminar;
     
     @FXML
     private Button btnAgregar;
@@ -79,7 +86,6 @@ public class PantallaProductosController implements Initializable {
     ObservableList <ProductoDeVenta> listaProductos;
     
     private String categoriaSeleccionada;
-    
     /**
      * Initializes the controller class.
      */
@@ -135,6 +141,12 @@ public class PantallaProductosController implements Initializable {
 
             this.listaProductos.add(producto);
             this.tblCategorias.setItems(listaProductos);
+            
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("Agregación exitosa");
+            alert.setContentText("Producto agregado");
+            alert.showAndWait();
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
@@ -147,6 +159,107 @@ public class PantallaProductosController implements Initializable {
     private void seleccionarCategoria(String categoria) {
         this.categoriaSeleccionada = categoria;
         btnMenuCategorias.setText("Categoría seleccionada: " + categoria);
+    }
+
+    @FXML
+    private void seleccionarProducto(MouseEvent event) {
+        ProductoDeVenta producto = this.tblCategorias.getSelectionModel().getSelectedItem();
+        
+        if (producto != null){
+            this.txtNombre.setText(producto.getNombre());
+            this.txtPrecio.setText(producto.getPrecio() + "");
+            this.txtStock.setText(producto.getStock() + "");
+        }
+    }
+
+    @FXML
+    private void modificarProducto(ActionEvent event) {
+        ProductoDeVenta producto = this.tblCategorias.getSelectionModel().getSelectedItem();
+        
+        if (producto == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText("Debe seleccionar un producto");
+            alert.showAndWait();
+        }
+        else {
+            try {
+                String nombre = this.txtNombre.getText();
+                double precio = Double.parseDouble(this.txtPrecio.getText());
+                int stock = Integer.parseInt(this.txtStock.getText());
+
+                if (categoriaSeleccionada == null || categoriaSeleccionada.isEmpty()) {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setHeaderText(null);
+                    alert.setTitle("Advertencia");
+                    alert.setContentText("Por favor, selecciona una categoría.");
+                    alert.showAndWait();
+                    return;
+                }
+
+                ProductoDeVenta auxProducto;
+                switch (categoriaSeleccionada) {
+                    case "Bebida":
+                        auxProducto = new Bebida(nombre, precio, stock);
+                        break;
+                    case "Comida rápida":
+                        auxProducto = new ComidaRápida(nombre, precio, stock);
+                    break;
+                    case "Postre":
+                        auxProducto = new Postre(nombre, precio, stock);
+                        break;
+                    case "Snack":
+                        auxProducto = new Snack(nombre, precio, stock); // Crea esta clase si es necesario
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Categoría desconocida: " + categoriaSeleccionada);
+                }
+                
+                producto.setNombre(auxProducto.getNombre());
+                producto.setPrecio(auxProducto.getPrecio());
+                producto.setStock(auxProducto.getStock());
+                
+                this.tblCategorias.refresh();
+                
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("Modificación exitosa");
+                alert.setContentText("Producto modificado");
+                alert.showAndWait();
+                
+            } catch (NumberFormatException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setTitle("Error");
+                alert.setContentText("Formato incorrecto");
+                alert.showAndWait();
+            }
+        }
+    }
+
+    @FXML
+    private void eliminarProducto(ActionEvent event) {
+        ProductoDeVenta producto = this.tblCategorias.getSelectionModel().getSelectedItem();
+        
+        if (producto == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText("Debe seleccionar un producto");
+            alert.showAndWait();
+        }
+        else {
+            
+            this.listaProductos.remove(producto);
+            this.tblCategorias.refresh();
+            
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("Eliminación exitosa");
+            alert.setContentText("Producto eliminado");
+            alert.showAndWait();
+        }
     }
     
 }
