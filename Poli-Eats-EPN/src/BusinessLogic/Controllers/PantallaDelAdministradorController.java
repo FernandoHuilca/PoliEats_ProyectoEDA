@@ -4,7 +4,6 @@
  */
 package BusinessLogic.Controllers;
 
-import BusinessLogic.AppBarPoliEats; //Solo es para probar, hay que eliminar 
 import BusinessLogic.MetodosFrecuentes;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -36,7 +35,6 @@ public class PantallaDelAdministradorController implements Initializable {
     @FXML
     private Button botonDeProductos;
     
-    AppBarPoliEats pruebaDelBar = new AppBarPoliEats();
     
     @FXML
     public void anadirPedido(){
@@ -44,11 +42,11 @@ public class PantallaDelAdministradorController implements Initializable {
     }
     @FXML 
     public void eliminarPedido(){
-        pruebaDelBar.eliminarPedido();
+        
         MetodosFrecuentes.mostrarAlerta("Ventana de Comprobacion", "Comprobar que si entro");
     }
     @FXML
     public void dirigirAPantallaDeProductos(){
-        MetodosFrecuentes.cambiarVentana(((Stage) botonDeProductos.getScene().getWindow()), "/Presentation/GenerarPedido.fxml", "Pantalla De Productos");
+        MetodosFrecuentes.cambiarVentana(((Stage) botonDeProductos.getScene().getWindow()), "/Presentation/PantallaProductos.fxml", "Pantalla De Productos");
     }
 }
