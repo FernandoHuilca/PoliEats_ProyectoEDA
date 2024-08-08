@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: ffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.PantallaProductosController">
+   <children>
+      <Text layoutX="424.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Productos">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="90.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categorías">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tblCategorias" layoutX="299.0" layoutY="113.0" prefHeight="420.0" prefWidth="565.0">
+        <columns>
+          <TableColumn fx:id="colNombre" prefWidth="182.0" text="Nombre" />
+          <TableColumn fx:id="colPrecio" prefWidth="124.0" text="Precio" />
+            <TableColumn fx:id="colStock" prefWidth="139.0" text="Stock" />
+            <TableColumn fx:id="colCategoría" prefWidth="119.0" text="Categoría" />
+        </columns>
+      </TableView>
+      <Text layoutX="90.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto:" />
+      <Text layoutX="88.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:" />
+      <Text layoutX="90.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock:" />
+      <Text layoutX="90.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoría:" />
+      <Button fx:id="btnAgregar" layoutX="93.0" layoutY="408.0" mnemonicParsing="false" onAction="#agregarProducto" text="Agregar Producto" />
+      <TextField fx:id="txtNombre" layoutX="88.0" layoutY="186.0" />
+      <TextField fx:id="txtPrecio" layoutX="88.0" layoutY="235.0" />
+      <TextField fx:id="txtStock" layoutX="90.0" layoutY="289.0" />
+      <MenuButton fx:id="btnMenuCategorias" layoutX="88.0" layoutY="350.0" mnemonicParsing="false" text="Elegir categoría">
+        <items>
+          <MenuItem fx:id="txtCategoriaBebida" mnemonicParsing="false" text="Bebida" />
+          <MenuItem fx:id="txtCategoriaComidaRápida" mnemonicParsing="false" text="Comida rápida" />
+          <MenuItem fx:id="txtCategoriaPostre" mnemonicParsing="false" text="Postre" />
+          <MenuItem fx:id="txtCategoriaSnack" mnemonicParsing="false" text="Snack" />
+        </items>
+      </MenuButton>
+   </children>
+</AnchorPane>
