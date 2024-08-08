@@ -4,11 +4,13 @@ public abstract class ProductoDeVenta {
     private String nombre;
     private double precio;
     private int stock;
+    private String categoría;
 
     public ProductoDeVenta(String nombre, double precio, int stock) {
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
+        this.categoría = getCategoría();
     }
 
 
@@ -45,5 +47,7 @@ public abstract class ProductoDeVenta {
     public double getPrecio() {
         return precio;
     }
+
+    public abstract String getCategoría();
 
 }

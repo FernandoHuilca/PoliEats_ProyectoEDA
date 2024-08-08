@@ -10,7 +10,7 @@ public class Main {
         String ANSI_GREEN = "\u001B[32m";
         String ANSI_YELLOW = "\u001B[33m";
         // Crear app
-        AppBarPoliEats appBarPoliEats = new AppBarPoliEats();
+        AppBarPoliEats appBarPoliEats = AppBarPoliEats.getInstance();
         // Pedir datos para administrador
         String nombre = "Fernando Huilca";
         String correo = "fernandohuilca3@gmail.com";
@@ -180,8 +180,8 @@ public class Main {
             System.out.println("Nombre: " + appBarPoliEats.getProductosDelInventarioSnacks()[i].getNombre());
             System.out.println("Stock: " + appBarPoliEats.getProductosDelInventarioSnacks()[i].getStock());
             System.out.println("Precio: " + appBarPoliEats.getProductosDelInventarioSnacks()[i].getPrecio());
+            System.out.println("AQUIIIII" + appBarPoliEats.getProductoDelInventario(0).getCategoría());
         }
-
 
     }
 }

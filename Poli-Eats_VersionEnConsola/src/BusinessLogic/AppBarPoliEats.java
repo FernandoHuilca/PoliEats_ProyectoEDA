@@ -1,18 +1,27 @@
 package BusinessLogic;
 
 public class AppBarPoliEats {
+    // APLICACIÓN DEL PATRÓN SINGLETON
+    private static AppBarPoliEats instance;
+
     public static final int MAX_ADMINISTRADORES = 500;
     private Administrador[] administradores;
     private ListaSimple<ProductoDeVenta> listSimpleProductos;
     private ColaSimple<Pedido> colaDePedidos;
     private int contadorDeAdministradores;
 
-    public AppBarPoliEats() {
+    private AppBarPoliEats() {
         this.administradores = new Administrador[MAX_ADMINISTRADORES];
         this.listSimpleProductos = new ListaSimple<>();
         this.colaDePedidos = new ColaSimple<>();
         this.contadorDeAdministradores = 0;
         inicializarAdministradores();
+    }
+    public static AppBarPoliEats getInstance() {
+        if (instance == null) {
+            instance = new AppBarPoliEats();
+        }
+        return instance;
     }
 
     private void inicializarAdministradores() {
