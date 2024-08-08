@@ -22,11 +22,12 @@
             <Font size="25.0" />
          </font>
       </Text>
-      <TableView fx:id="tblCategorias" layoutX="299.0" layoutY="113.0" prefHeight="377.0" prefWidth="538.0">
+      <TableView fx:id="tblCategorias" layoutX="299.0" layoutY="113.0" prefHeight="420.0" prefWidth="565.0">
         <columns>
           <TableColumn fx:id="colNombre" prefWidth="182.0" text="Nombre" />
-          <TableColumn fx:id="colPrecio" prefWidth="180.0" text="Precio" />
-            <TableColumn fx:id="colStock" prefWidth="175.0" text="Stock" />
+          <TableColumn fx:id="colPrecio" prefWidth="124.0" text="Precio" />
+            <TableColumn fx:id="colStock" prefWidth="139.0" text="Stock" />
+            <TableColumn fx:id="colCategoría" prefWidth="119.0" text="Categoría" />
         </columns>
       </TableView>
       <Text layoutX="90.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto:" />

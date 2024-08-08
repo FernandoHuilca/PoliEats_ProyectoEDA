@@ -56,6 +56,9 @@ public class PantallaProductosController implements Initializable {
     private TableColumn colStock;
     
     @FXML
+    private TableColumn colCategoría;
+    
+    @FXML
     private TableView<ProductoDeVenta> tblCategorias;
     
     @FXML
@@ -76,7 +79,7 @@ public class PantallaProductosController implements Initializable {
     ObservableList <ProductoDeVenta> listaProductos;
     
     private String categoriaSeleccionada;
-
+    
     /**
      * Initializes the controller class.
      */
@@ -87,6 +90,7 @@ public class PantallaProductosController implements Initializable {
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colPrecio.setCellValueFactory(new PropertyValueFactory("precio"));
         this.colStock.setCellValueFactory(new PropertyValueFactory("stock"));
+        this.colCategoría.setCellValueFactory(new PropertyValueFactory("categoría"));
         
         // Asignar manejadores de eventos a los MenuItem
         txtCategoriaBebida.setOnAction(e -> seleccionarCategoria("Bebida"));
