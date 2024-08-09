@@ -4,6 +4,7 @@
  */
 package BusinessLogic.Controllers;
 
+import BusinessLogic.AppBarPoliEats;
 import BusinessLogic.MetodosFrecuentes;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,6 +28,7 @@ public class PantallaDelAdministradorController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }  
+    AppBarPoliEats bar = AppBarPoliEats.getInstance();
     
     @FXML
     private Button botonAnadirPedido;
@@ -42,7 +44,7 @@ public class PantallaDelAdministradorController implements Initializable {
     }
     @FXML 
     public void eliminarPedido(){
-        
+        bar.eliminarPedido();
         MetodosFrecuentes.mostrarAlerta("Ventana de Comprobacion", "Comprobar que si entro");
     }
     @FXML

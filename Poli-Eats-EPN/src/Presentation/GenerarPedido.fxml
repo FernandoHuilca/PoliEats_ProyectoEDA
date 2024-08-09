@@ -1,8 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="BusinessLogic.Controllers.GenerarPedidoController">
-    
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.GenerarPedidoController">
+   <children>
+      <Spinner fx:id="spinnerContadorProductos" editable="true" layoutX="354.0" layoutY="470.0" />
+      <TableView fx:id="tblProductosSeleccionados" layoutX="841.0" layoutY="92.0" prefHeight="378.0" prefWidth="216.0">
+        <columns>
+          <TableColumn fx:id="colProducto" prefWidth="75.0" text="Producto" />
+          <TableColumn fx:id="colCantidad" prefWidth="75.0" text="Cantidad" />
+            <TableColumn fx:id="colValor" prefWidth="75.0" text="Valor" />
+          <TableColumn prefWidth="96.79998779296875" text="C2" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tblTotalAPagar" layoutX="850.0" layoutY="515.0" prefHeight="102.0" prefWidth="198.0">
+        <columns>
+          <TableColumn fx:id="colTotalAPagar" prefWidth="119.2000732421875" text="Total a Pagar" />
+        </columns>
+      </TableView>
+      <Button fx:id="botonConfirmarProducto" layoutX="392.0" layoutY="566.0" mnemonicParsing="false" onAction="#confirmarProducto" text="Confirmar">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
+      <Pagination fx:id="paginaDeProductos" layoutX="278.0" layoutY="109.0" prefHeight="278.0" prefWidth="302.0" />
+      <MenuButton fx:id="botonElegircategorias" layoutX="335.0" layoutY="64.0" mnemonicParsing="false" text="Elegir Categoría">
+        <items>
+          <MenuItem fx:id="txtCategoriaBebida" mnemonicParsing="false" text="Bebida" />
+          <MenuItem fx:id="txtCategoriaComidaRápida" mnemonicParsing="false" text="Comida Rápida" />
+            <MenuItem fx:id="txtCategoriaPostre" mnemonicParsing="false" text="Postre" />
+            <MenuItem fx:id="txtCategoriaSnack" mnemonicParsing="false" text="Snack" />
+        </items>
+      </MenuButton>
+   </children>
 </AnchorPane>
