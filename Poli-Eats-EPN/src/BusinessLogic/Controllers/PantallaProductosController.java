@@ -4,17 +4,16 @@
  */
 package BusinessLogic.Controllers;
 
-import BusinessLogic.AppBarPoliEats;
 import BusinessLogic.Bebida;
 import BusinessLogic.ComidaRápida;
 import BusinessLogic.Postre;
 import BusinessLogic.ProductoDeVenta;
 import BusinessLogic.Snack;
 import java.net.URL;
-import java.util.HashSet;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -83,15 +82,36 @@ public class PantallaProductosController implements Initializable {
     @FXML
     private MenuItem txtCategoriaComidaRápida;
     
+    @FXML
+    private MenuButton btnFiltroCategorías;
+    
+    @FXML
+    private MenuItem filtroCategoriaBebida;
+    
+    @FXML
+    private MenuItem filtroCategoriaComidaRapida;
+    
+    @FXML 
+    private MenuItem filtroCategoriaPostre;
+    
+    @FXML
+    private MenuItem filtroCategoriaSnack;
+    
+    @FXML
+    private MenuItem filtroMostrarTodos;
+    
     ObservableList <ProductoDeVenta> listaProductos;
+    FilteredList <ProductoDeVenta> listaFiltrada;
     
     private String categoriaSeleccionada;
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         listaProductos = FXCollections.observableArrayList();
+        listaFiltrada = new FilteredList<>(listaProductos, p -> true);
         
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colPrecio.setCellValueFactory(new PropertyValueFactory("precio"));
@@ -103,6 +123,13 @@ public class PantallaProductosController implements Initializable {
         txtCategoriaComidaRápida.setOnAction(e -> seleccionarCategoria("Comida rápida"));
         txtCategoriaPostre.setOnAction(e -> seleccionarCategoria("Postre"));
         txtCategoriaSnack.setOnAction(e -> seleccionarCategoria("Snack")); // Añade este manejador si tienes más categorías
+        
+        // Asignar manejadores de eventos a los MenuItem del btnFiltroCategorias
+        filtroCategoriaBebida.setOnAction(e -> filtrarPorCategoria("Bebida"));
+        filtroCategoriaComidaRapida.setOnAction(e -> filtrarPorCategoria("Comida rápida"));
+        filtroCategoriaPostre.setOnAction(e -> filtrarPorCategoria("Postre"));
+        filtroCategoriaSnack.setOnAction(e -> filtrarPorCategoria("Snacks"));
+        filtroMostrarTodos.setOnAction(e -> mostrarTodos());
     }    
     
     @FXML
@@ -139,14 +166,17 @@ public class PantallaProductosController implements Initializable {
                     throw new IllegalArgumentException("Categoría desconocida: " + categoriaSeleccionada);
             }
 
-            this.listaProductos.add(producto);
-            this.tblCategorias.setItems(listaProductos);
-            
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setTitle("Agregación exitosa");
-            alert.setContentText("Producto agregado");
-            alert.showAndWait();
+            if (!this.listaProductos.contains(producto)){
+                this.listaProductos.add(producto);
+                this.tblCategorias.setItems(listaProductos);
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setTitle("Error");
+                alert.setContentText("El producto ya existe");
+                alert.showAndWait();
+            }
+
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
@@ -160,15 +190,48 @@ public class PantallaProductosController implements Initializable {
         this.categoriaSeleccionada = categoria;
         btnMenuCategorias.setText("Categoría seleccionada: " + categoria);
     }
+    
+    private void filtrarPorCategoria(String categoria) {
+        btnFiltroCategorías.setText("Filtro: " + categoria);
+        listaFiltrada.setPredicate(producto -> producto.getCategoría().equals(categoria));
+        tblCategorias.setItems(listaFiltrada);
+        tblCategorias.refresh();
+    }
+    
+    private void mostrarTodos() {
+        btnFiltroCategorías.setText("Mostrar Todos");
+        listaFiltrada.setPredicate(null); // Eliminar el filtro para mostrar todos los productos
+        tblCategorias.setItems(listaFiltrada);
+        tblCategorias.refresh();
+    }
 
     @FXML
     private void seleccionarProducto(MouseEvent event) {
         ProductoDeVenta producto = this.tblCategorias.getSelectionModel().getSelectedItem();
-        
-        if (producto != null){
+
+        if (producto != null) {
             this.txtNombre.setText(producto.getNombre());
-            this.txtPrecio.setText(producto.getPrecio() + "");
-            this.txtStock.setText(producto.getStock() + "");
+            this.txtPrecio.setText(String.valueOf(producto.getPrecio()));
+            this.txtStock.setText(String.valueOf(producto.getStock()));
+
+            // Determinar la categoría del producto y mostrarla en el MenuButton
+            String categoria = obtenerCategoria(producto);
+            this.categoriaSeleccionada = categoria;
+            btnMenuCategorias.setText("Categoría seleccionada: " + categoria);
+        }
+    }
+    
+    private String obtenerCategoria(ProductoDeVenta producto) {
+        if (producto instanceof Bebida) {
+            return "Bebida";
+        } else if (producto instanceof ComidaRápida) {
+            return "Comida rápida";
+        } else if (producto instanceof Postre) {
+            return "Postre";
+        } else if (producto instanceof Snack) {
+            return "Snack";
+        } else {
+            return "Desconocido";
         }
     }
 
@@ -216,17 +279,19 @@ public class PantallaProductosController implements Initializable {
                         throw new IllegalArgumentException("Categoría desconocida: " + categoriaSeleccionada);
                 }
                 
-                producto.setNombre(auxProducto.getNombre());
-                producto.setPrecio(auxProducto.getPrecio());
-                producto.setStock(auxProducto.getStock());
-                
-                this.tblCategorias.refresh();
-                
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setHeaderText(null);
-                alert.setTitle("Modificación exitosa");
-                alert.setContentText("Producto modificado");
-                alert.showAndWait();
+                if (!this.listaProductos.contains(auxProducto)){
+                    producto.setNombre(auxProducto.getNombre());
+                    producto.setPrecio(auxProducto.getPrecio());
+                    producto.setStock(auxProducto.getStock());
+                    
+                    this.tblCategorias.refresh();
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setHeaderText(null);
+                    alert.setTitle("Error");
+                    alert.setContentText("El producto ya existe");
+                    alert.showAndWait();
+                }
                 
             } catch (NumberFormatException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -253,12 +318,7 @@ public class PantallaProductosController implements Initializable {
             
             this.listaProductos.remove(producto);
             this.tblCategorias.refresh();
-            
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setTitle("Eliminación exitosa");
-            alert.setContentText("Producto eliminado");
-            alert.showAndWait();
+          
         }
     }
     
