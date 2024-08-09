@@ -193,6 +193,13 @@ public class Main {
             // ESTE MÉTODO SI TE VA A DEVOLVER COMO STRING
             System.out.println("AQUIIIII" + appBarPoliEats.getProductoDelInventario(0).getCategoría().getCategoríaString());
         }
+        
+        
+        
+        System.out.println("_______________ FRUTAAAAAAA __________________");
+        ProductoDeVenta fruta = new Fruta("MANZANA", 0.75 , 100);
+        appBarPoliEats.agregarProductoIzquierda(fruta);
+        appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.FRUTA);
 
     }
 }
