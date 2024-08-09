@@ -9,6 +9,8 @@ import BusinessLogic.AppBarPoliEats;
 import BusinessLogic.Bebida;
 import BusinessLogic.ComidaRápida;
 import BusinessLogic.Controllers.SaludoBienvenidaController;
+import BusinessLogic.Fruta;
+import BusinessLogic.Otro;
 import BusinessLogic.Postre;
 import BusinessLogic.ProductoDeVenta;
 import BusinessLogic.Snack;
@@ -72,7 +74,9 @@ public class PoliEatsEPN extends Application{
             {"src/Data/ProductosDeVenta/ProductosBebidas.txt", "Bebida"},
             {"src/Data/ProductosDeVenta/ProductosComidaRapida.txt", "ComidaRapida"},
             {"src/Data/ProductosDeVenta/ProductosPostre.txt", "Postre"},
-            {"src/Data/ProductosDeVenta/ProductosSnacks.txt", "Snack"}
+            {"src/Data/ProductosDeVenta/ProductosSnacks.txt", "Snack"},
+            {"src/Data/ProductosDeVenta/ProductosFruta.txt", "Fruta"},
+            {"src/Data/ProductosDeVenta/ProductosOtro.txt", "Otro"}
             // Agrega más archivos y tipos según sea necesario
         };
 
@@ -101,6 +105,12 @@ public class PoliEatsEPN extends Application{
                         break;
                     case "Snack":
                         nuevoProducto = new Snack(nombre, Double.parseDouble(precio), Integer.parseInt(stock));
+                        break;
+                    case "Fruta":
+                        nuevoProducto = new Fruta(nombre, Double.parseDouble(precio), Integer.parseInt(stock));
+                        break;
+                    case "Otro":
+                        nuevoProducto = new Otro(nombre, Double.parseDouble(precio), Integer.parseInt(stock));
                         break;
                     // Agrega más casos según sea necesario
                     default:

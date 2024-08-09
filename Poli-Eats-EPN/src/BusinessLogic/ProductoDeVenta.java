@@ -7,7 +7,7 @@ public abstract class ProductoDeVenta {
     private String nombre;
     private double precio;
     private int stock;
-    private String categoría;
+    private Categoría categoría;
 
     public ProductoDeVenta(String nombre, double precio, int stock) {
         this.nombre = nombre;
@@ -51,7 +51,7 @@ public abstract class ProductoDeVenta {
         return precio;
     }
 
-    public abstract String getCategoría();
+    public abstract Categoría getCategoría();
 
     @Override
     public int hashCode() {

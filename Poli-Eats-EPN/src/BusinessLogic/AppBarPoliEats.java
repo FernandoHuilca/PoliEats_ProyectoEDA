@@ -17,6 +17,7 @@ public class AppBarPoliEats {
         this.contadorDeAdministradores = 0;
         inicializarAdministradores();
     }
+
     public static AppBarPoliEats getInstance() {
         if (instance == null) {
             instance = new AppBarPoliEats();
@@ -101,77 +102,44 @@ public class AppBarPoliEats {
     }
 
     public void imprimirProductosEnInventario() {
-        for(int i = 0 ; i < listSimpleProductos.getNúmeroDeDatos(); i ++){
+        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
             System.out.println(listSimpleProductos.getDato(i));
         }
     }
 
-    // Método para imprimir productos por categoría
-    public void imprimirProductosPorCategoría() {
-        System.out.println("BEBIDAS");
+    //Método para imprimir productos por categoría GENERAL:
+    public void imprimirProductosDelInventarioPorCategoría(Categoría categoría) {
         for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
             ProductoDeVenta producto = listSimpleProductos.getDato(i);
-            if (producto instanceof Bebida) {
-                System.out.println(producto);
-            }
-        }
-        System.out.println("SNACKS");
-        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            ProductoDeVenta producto = listSimpleProductos.getDato(i);
-            if (producto instanceof Snack) {
-                System.out.println(producto);
-            }
-        }
-        System.out.println("COMIDA RÁPIDA");
-        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            ProductoDeVenta producto = listSimpleProductos.getDato(i);
-            if (producto instanceof ComidaRápida) {
-                System.out.println(producto);
-            }
-        }
-        System.out.println("POSTRE");
-        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            ProductoDeVenta producto = listSimpleProductos.getDato(i);
-            if (producto instanceof Postre) {
+            if (producto.getCategoría() == categoría) {
                 System.out.println(producto);
             }
         }
     }
 
-    public void imprimirProductosBebidas() {
+    // Método para devolver el número de productos según alguna categoría
+    public int getNúmeroDeProductosDelInventarioCategoría(Categoría categoría) {
+        int count = 0;
         for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            ProductoDeVenta producto = listSimpleProductos.getDato(i);
-            if (producto instanceof Bebida) {
-                System.out.println(producto);
+            if (listSimpleProductos.getDato(i).getCategoría() == categoría) {
+                count++;
             }
         }
+        return count;
     }
 
-    public void imprimirProductosSnacks() {
+    // Método para devolver un arreglo de la lista de productos según la categoría
+    public ProductoDeVenta[] getProductosDelInventarioCategoría(Categoría categoría) {
+        int númeroDeCategoría = getNúmeroDeProductosDelInventarioCategoría(categoría);
+        ProductoDeVenta[] auxProductos = new ProductoDeVenta[númeroDeCategoría];
+        int contador = 0;
         for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            ProductoDeVenta producto = listSimpleProductos.getDato(i);
-            if (producto instanceof Snack) {
-                System.out.println(producto);
+            if (listSimpleProductos.getDato(i).getCategoría() == categoría) {
+                auxProductos[contador] = listSimpleProductos.getDato(i);
+                contador++;
             }
         }
-    }
-
-    public void imprimirProductosComidaRápida() {
-        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            ProductoDeVenta producto = listSimpleProductos.getDato(i);
-            if (producto instanceof ComidaRápida) {
-                System.out.println(producto);
-            }
-        }
-    }
-
-    public void imprimirProductosPostre() {
-        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            ProductoDeVenta producto = listSimpleProductos.getDato(i);
-            if (producto instanceof Postre) {
-                System.out.println(producto);
-            }
-        }
+        return auxProductos;
     }
 
     public boolean modificarProductoNombre(int índiceDelProducto, String nombre) {
@@ -186,97 +154,6 @@ public class AppBarPoliEats {
         return listSimpleProductos.getDato(índiceDelProducto).setStock(cantidadDeStock);
     }
 
-    // Métodos para contar productos por categoría
-    public int getNúmeroDeProductosDelInventarioBebidas() {
-        int count = 0;
-        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            if (listSimpleProductos.getDato(i) instanceof Bebida) {
-                count++;
-            }
-        }
-        return count;
-    }
 
-    public int getNúmeroDeProductosDelInventarioSnacks() {
-        int count = 0;
-        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            if (listSimpleProductos.getDato(i) instanceof Snack) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    public int getNúmeroDeProductosDelInventarioComidaRápida() {
-        int count = 0;
-        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            if (listSimpleProductos.getDato(i) instanceof ComidaRápida) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    public int getNúmeroDeProductosDelInventarioPostres() {
-        int count = 0;
-        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            if (listSimpleProductos.getDato(i) instanceof Postre) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-
-    public ProductoDeVenta[] getProductosDelInventarioBebidas() {
-        int númeroDeBebidas = getNúmeroDeProductosDelInventarioBebidas();
-        ProductoDeVenta[] auxProductos = new ProductoDeVenta[númeroDeBebidas];
-        int contador = 0;
-        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            if (listSimpleProductos.getDato(i) instanceof Bebida) {
-                auxProductos[contador] = listSimpleProductos.getDato(i);
-                contador++;
-            }
-        }
-        return auxProductos;
-    }
-    public ProductoDeVenta[] getProductosDelInventarioSnacks() {
-        int númeroDeSnacks = getNúmeroDeProductosDelInventarioSnacks();
-        ProductoDeVenta[] auxProductos = new ProductoDeVenta[númeroDeSnacks];
-        int contador = 0;
-        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            if (listSimpleProductos.getDato(i) instanceof Snack) {
-                auxProductos[contador] = listSimpleProductos.getDato(i);
-                contador++;
-            }
-        }
-        return auxProductos;
-    }
-
-    public ProductoDeVenta[] getProductosDelInventarioComidaRápida() {
-        int númeroDeComidaRapida = getNúmeroDeProductosDelInventarioComidaRápida();
-        ProductoDeVenta[] auxProductos = new ProductoDeVenta[númeroDeComidaRapida];
-        int contador = 0;
-        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            if (listSimpleProductos.getDato(i) instanceof ComidaRápida) {
-                auxProductos[contador] = listSimpleProductos.getDato(i);
-                contador++;
-            }
-        }
-        return auxProductos;
-    }
-
-    public ProductoDeVenta[] getProductosDelInventarioPostres() {
-        int númeroDePostres = getNúmeroDeProductosDelInventarioPostres();
-        ProductoDeVenta[] auxProductos = new ProductoDeVenta[númeroDePostres];
-        int contador = 0;
-        for (int i = 0; i < listSimpleProductos.getNúmeroDeDatos(); i++) {
-            if (listSimpleProductos.getDato(i) instanceof Postre) {
-                auxProductos[contador] = listSimpleProductos.getDato(i);
-                contador++;
-            }
-        }
-        return auxProductos;
-    }
 
 }

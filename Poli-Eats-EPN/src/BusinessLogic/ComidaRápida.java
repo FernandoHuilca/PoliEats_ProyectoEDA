@@ -6,7 +6,7 @@ public class ComidaRápida extends ProductoDeVenta{
     }
 
     @Override
-    public String getCategoría() {
-        return "Comida rápida";
+    public Categoría getCategoría() {
+        return Categoría.COMIDA_RÁPIDA;
     }
 }

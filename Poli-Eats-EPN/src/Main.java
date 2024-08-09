@@ -137,22 +137,29 @@ public class Main {
         appBarPoliEats.agregarProductoDerecha(nuevoProducto4);
         appBarPoliEats.agregarProductoDerecha(nuevoProducto3);
         System.out.println("_________________________________");
-        appBarPoliEats.imprimirProductosBebidas();
+        appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.BEBIDA);
         System.out.println("_________________________________");
-        appBarPoliEats.imprimirProductosSnacks();
+        appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.SNACK);
         System.out.println("_________________________________");
-        appBarPoliEats.imprimirProductosComidaRápida();
+        appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.COMIDA_RÁPIDA);
         System.out.println("_________________________________");
-        appBarPoliEats.imprimirProductosPostre();
+        appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.POSTRE);
         System.out.println("_________________________________");
 
-        appBarPoliEats.imprimirProductosPorCategoría();
 
         System.out.println(ANSI_YELLOW +"Caso 12 : Modificar producto ____________________________________"+ ANSI_RESET);
         appBarPoliEats.modificarProductoNombre(0, "Big Cola");
         appBarPoliEats.modificarProductoPrecio(0, 0.30);
         appBarPoliEats.modificarProductoStock(0, 15000);
-        appBarPoliEats.imprimirProductosPorCategoría();
+        System.out.println("_____________ BEBIDA ____________________");
+        appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.BEBIDA);
+        System.out.println("_______________ SNACKS __________________");
+        appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.SNACK);
+        System.out.println("_______________ COMIDA RÁPIDA __________________");
+        appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.COMIDA_RÁPIDA);
+        System.out.println("_______________ POSTRE __________________");
+        appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.POSTRE);
+        System.out.println("_________________________________");
         System.out.println(ANSI_YELLOW +"Caso 13 : Método que desea mi Mateo Simbaña ____________________________________"+ ANSI_RESET);
         for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventario(); i++){
             System.out.println("Nombre: " + appBarPoliEats.getProductoDelInventario(i).getNombre());
@@ -161,27 +168,43 @@ public class Main {
         }
 
         System.out.println(ANSI_YELLOW +"Caso 14 : Método que desea mi Mateo Simbaña get Producto Por categoría ____________________________________"+ ANSI_RESET);
-        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventarioBebidas(); i++){
-            System.out.println("Nombre: " + appBarPoliEats.getProductosDelInventarioBebidas()[i].getNombre());
-            System.out.println("Stock: " + appBarPoliEats.getProductosDelInventarioBebidas()[i].getStock());
-            System.out.println("Precio: " + appBarPoliEats.getProductosDelInventarioBebidas()[i].getPrecio());
+        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventarioCategoría(Categoría.BEBIDA); i++){
+            System.out.println("Nombre: " + appBarPoliEats.getProductosDelInventarioCategoría(Categoría.BEBIDA)[i].getNombre());
+            System.out.println("Stock: " + appBarPoliEats.getProductosDelInventarioCategoría(Categoría.BEBIDA)[i].getStock());
+            System.out.println("Precio: " + appBarPoliEats.getProductosDelInventarioCategoría(Categoría.BEBIDA)[i].getPrecio());
         }
-        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventarioPostres(); i++){
-            System.out.println("Nombre: " + appBarPoliEats.getProductosDelInventarioPostres()[i].getNombre());
-            System.out.println("Stock: " + appBarPoliEats.getProductosDelInventarioPostres()[i].getStock());
-            System.out.println("Precio: " + appBarPoliEats.getProductosDelInventarioPostres()[i].getPrecio());
+        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventarioCategoría(Categoría.POSTRE); i++){
+            System.out.println("Nombre: " + appBarPoliEats.getProductosDelInventarioCategoría(Categoría.POSTRE)[i].getNombre());
+            System.out.println("Stock: " + appBarPoliEats.getProductosDelInventarioCategoría(Categoría.POSTRE)[i].getStock());
+            System.out.println("Precio: " + appBarPoliEats.getProductosDelInventarioCategoría(Categoría.POSTRE)[i].getPrecio());
         }
-        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventarioComidaRápida(); i++){
-            System.out.println("Nombre: " + appBarPoliEats.getProductosDelInventarioComidaRápida()[i].getNombre());
-            System.out.println("Stock: " + appBarPoliEats.getProductosDelInventarioComidaRápida()[i].getStock());
-            System.out.println("Precio: " + appBarPoliEats.getProductosDelInventarioComidaRápida()[i].getPrecio());
+        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventarioCategoría(Categoría.COMIDA_RÁPIDA); i++){
+            System.out.println("Nombre: " + appBarPoliEats.getProductosDelInventarioCategoría(Categoría.COMIDA_RÁPIDA)[i].getNombre());
+            System.out.println("Stock: " + appBarPoliEats.getProductosDelInventarioCategoría(Categoría.COMIDA_RÁPIDA)[i].getStock());
+            System.out.println("Precio: " + appBarPoliEats.getProductosDelInventarioCategoría(Categoría.COMIDA_RÁPIDA)[i].getPrecio());
         }
-        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventarioSnacks(); i++){
-            System.out.println("Nombre: " + appBarPoliEats.getProductosDelInventarioSnacks()[i].getNombre());
-            System.out.println("Stock: " + appBarPoliEats.getProductosDelInventarioSnacks()[i].getStock());
-            System.out.println("Precio: " + appBarPoliEats.getProductosDelInventarioSnacks()[i].getPrecio());
+        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventarioCategoría(Categoría.SNACK); i++){
+            System.out.println("Nombre: " + appBarPoliEats.getProductosDelInventarioCategoría(Categoría.SNACK)[i].getNombre());
+            System.out.println("Stock: " + appBarPoliEats.getProductosDelInventarioCategoría(Categoría.SNACK)[i].getStock());
+            System.out.println("Precio: " + appBarPoliEats.getProductosDelInventarioCategoría(Categoría.SNACK)[i].getPrecio());
+
+            // ESTE MÉTODO DE VA A DEVOLVER LA CATEGORÍA PERO NO EN FORMA DE STRING
             System.out.println("AQUIIIII" + appBarPoliEats.getProductoDelInventario(0).getCategoría());
+            // ESTE MÉTODO SI TE VA A DEVOLVER COMO STRING
+            System.out.println("AQUIIIII" + appBarPoliEats.getProductoDelInventario(0).getCategoría().getCategoríaString());
         }
+        
+        
+        
+        System.out.println("_______________ FRUTAAAAAAA __________________");
+        ProductoDeVenta fruta = new Fruta("MANZANA", 0.75 , 100);
+        appBarPoliEats.agregarProductoIzquierda(fruta);
+        appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.FRUTA);
+         
+        System.out.println("_______________ OTROOOOOOO __________________");
+        ProductoDeVenta otro = new Otro("Papas Frutas con yoogurt", 0.75 , 100);
+        appBarPoliEats.agregarProductoIzquierda(otro);
+        appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.OTRO);
 
     }
 }
