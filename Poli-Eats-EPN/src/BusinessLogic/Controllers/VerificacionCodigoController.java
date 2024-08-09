@@ -26,6 +26,7 @@ public class VerificacionCodigoController {
     private int intentosRestantes;
     private SolicitarCuentaAdminController solicitarCuentaAdminController;
     private String administrador;
+    private String correo;
     private String contraseña;
 
     public void setDatos(String codigoVerificacion, int intentosMaximos, SolicitarCuentaAdminController solicitarCuentaAdminController) {
@@ -33,14 +34,14 @@ public class VerificacionCodigoController {
         this.intentosRestantes = intentosMaximos;
         this.solicitarCuentaAdminController = solicitarCuentaAdminController;
         this.administrador = this.solicitarCuentaAdminController.txtNombre.getText();
+        this.correo = this.solicitarCuentaAdminController.txtCorreo.getText();
         this.contraseña = this.solicitarCuentaAdminController.txtContraseña.getText();
         actualizarIntentosRestantes();
     }
 
-    
     @FXML
     public void regresarLongIn() {
-       try {
+        try {
             // Obtener el Stage actual
             Stage currentStage = (Stage) regresar.getScene().getWindow();
 
@@ -61,21 +62,22 @@ public class VerificacionCodigoController {
             alert.showAndWait();
         }
     }
-    
+
     @FXML
     public void verificarCodigo() {
         String codigoIngresado = txtCodigoVerificacion.getText();
 
         if (codigoVerificacion.equals(codigoIngresado)) {
-            solicitarCuentaAdminController.guardarAdministradoresYRegresar(administrador, contraseña);
+            // Guardar el administrador en el archivo y en la aplicación
+            solicitarCuentaAdminController.guardarAdministradoresYRegresar(administrador, correo, contraseña);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Correcto");
             alert.setHeaderText(null);
             alert.setContentText("El código es correcto, se ha creado su cuenta.");
             alert.showAndWait();
             regresarLongIn();
-            
-        } else {
+
+        }  else {
             intentosRestantes--;
             if (intentosRestantes <= 0) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);

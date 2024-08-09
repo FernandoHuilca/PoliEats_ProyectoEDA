@@ -1,5 +1,8 @@
 package BusinessLogic;
 // ProductoDeVenta.java
+
+import java.util.Objects;
+
 public abstract class ProductoDeVenta {
     private String nombre;
     private double precio;
@@ -50,4 +53,34 @@ public abstract class ProductoDeVenta {
 
     public abstract String getCategoría();
 
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final ProductoDeVenta other = (ProductoDeVenta) obj;
+        if (Double.doubleToLongBits(this.precio) != Double.doubleToLongBits(other.precio)) {
+            return false;
+        }
+        if (this.stock != other.stock) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return Objects.equals(this.categoría, other.categoría);
+    }
+    
 }

@@ -4,34 +4,39 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.LoginAdminController">
    <children>
-      <Pane layoutX="383.0" layoutY="215.0" prefHeight="470.0" prefWidth="702.0" style="-fx-background-color: #F5E7C3;">
-         <children>
-            <Label layoutX="124.0" layoutY="87.0" text="Nombre:" textFill="#000000cc">
-               <font>
-                  <Font name="Arial Black" size="12.0" />
-               </font></Label>
-            <TextField fx:id="txtAdministrador" layoutX="124.0" layoutY="112.0" prefHeight="25.0" prefWidth="272.0" />
-            <Label layoutX="128.0" layoutY="191.0" text="Contraseña:" textFill="#000000c7">
-               <font>
-                  <Font name="Arial Black" size="12.0" />
-               </font></Label>
-            <PasswordField fx:id="txtContraseña" layoutX="128.0" layoutY="216.0" prefHeight="25.0" prefWidth="272.0" />
-            <Button fx:id="LogIn" layoutX="228.0" layoutY="290.0" mnemonicParsing="false" onAction="#LoginAcceso" prefHeight="17.0" prefWidth="79.0" style="-fx-background-color: #F13647;" text="Log In" textFill="WHITE">
-               <font>
-                  <Font name="Arial Black" size="12.0" />
-               </font></Button>
-            <Label layoutX="147.0" layoutY="361.0" text="Solicitar cuenta de administrador: " />
-            <Button fx:id="SolicitarButton" layoutX="347.0" layoutY="357.0" mnemonicParsing="false" onAction="#SolicitarCuentaAdmin" style="-fx-background-color: #F14647;" text="Solicitar" textFill="WHITE">
-               <font>
-                  <Font name="Arial Black" size="12.0" />
-               </font></Button>
-         </children>
-      </Pane>
+      <ImageView fitHeight="700.0" fitWidth="1100.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Data/imagenes/LoginAdministradores.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="446.0" layoutY="248.0" text="Nombre:" textFill="#000000cc">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtAdministrador" layoutX="444.0" layoutY="266.0" prefHeight="25.0" prefWidth="272.0" />
+      <Label layoutX="444.0" layoutY="298.0" text="Contraseña:" textFill="#000000c7">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="txtContraseña" layoutX="445.0" layoutY="316.0" prefHeight="25.0" prefWidth="272.0" />
+      <Button fx:id="LogIn" layoutX="647.0" layoutY="384.0" mnemonicParsing="false" onAction="#LoginAcceso" prefHeight="17.0" prefWidth="79.0" style="-fx-background-color: #FEFCFD;" text="Log In" textFill="#000000db">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="SolicitarButton" layoutX="423.0" layoutY="384.0" mnemonicParsing="false" onAction="#SolicitarCuentaAdmin" style="-fx-background-color: #FEFCFD;" text="Sing Up" textFill="#030303d2">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

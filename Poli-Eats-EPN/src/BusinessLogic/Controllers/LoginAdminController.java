@@ -1,8 +1,7 @@
-
 package BusinessLogic.Controllers;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import BusinessLogic.Administrador;
+import BusinessLogic.AppBarPoliEats;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,44 +16,34 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-
 public class LoginAdminController implements Initializable {
-    private final String archivoAdministradoresContraseñas = "src/Data/Login/NombresContraseniasAdministradores.txt";
-  
+
     @FXML
     private Button SolicitarButton;
-     @FXML
+    @FXML
     private Button LogIn;
     @FXML
     private TextField txtAdministrador;
     @FXML
     private PasswordField txtContraseña;
 
-    
     @FXML
-    public void SolicitarCuentaAdmin(){
-        cambiarVentana("/Presentation/SolicitarCuentaAdmin.fxml","SolicitarCuenta"); 
+    public void SolicitarCuentaAdmin() {
+        cambiarVentana("/Presentation/SolicitarCuentaAdmin.fxml", "Solicitar Cuenta");
     }
+
     @FXML
     public void LoginAcceso() {
         String usuario = txtAdministrador.getText();
         String contraseña = txtContraseña.getText();
         boolean credencialesValidas = false;
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(archivoAdministradoresContraseñas))) {
-            String linea;
-            while ((linea = reader.readLine()) != null) {
-                String archivoUsuario = linea;
-                String archivoContraseña = reader.readLine();
-
-                if (usuario.equals(archivoUsuario) && contraseña.equals(archivoContraseña)) {
-                    credencialesValidas = true;
-                    break;
-                }
+        AppBarPoliEats appBarPoliEats = AppBarPoliEats.getInstance();
+        for (Administrador admin : appBarPoliEats.getAdministradores()) {
+            if (admin.getNombre().equals(usuario) && admin.getContraseña().equals(contraseña)) {
+                credencialesValidas = true;
+                break;
             }
-        } catch (IOException e) {
-            mostrarAlerta("Error", "Ocurrió un error al leer el archivo.");
-            e.printStackTrace();
         }
 
         if (credencialesValidas) {
@@ -63,8 +52,7 @@ public class LoginAdminController implements Initializable {
             mostrarAlerta("Error", "Usuario o contraseña incorrectos.");
         }
     }
-    
-    
+
     private void cambiarVentana(String rutaFXML, String titulo) {
         try {
             // Obtener el Stage actual
@@ -83,16 +71,17 @@ public class LoginAdminController implements Initializable {
             e.printStackTrace();
         }
     }
-     private void mostrarAlerta(String titulo, String mensaje) {
+
+    private void mostrarAlerta(String titulo, String mensaje) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(titulo);
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
-   
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 }
