@@ -5,7 +5,8 @@ public enum Categoría {
     POSTRE("Postre"),
     SNACK("Snack"),
     COMIDA_RÁPIDA("Comida rápida"),
-    FRUTA("Fruta");
+    FRUTA("Fruta"),
+    OTRO("Otro");
     private String categoría;
 
     Categoría(String categoría) {

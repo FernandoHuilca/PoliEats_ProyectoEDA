@@ -200,6 +200,11 @@ public class Main {
         ProductoDeVenta fruta = new Fruta("MANZANA", 0.75 , 100);
         appBarPoliEats.agregarProductoIzquierda(fruta);
         appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.FRUTA);
+         
+        System.out.println("_______________ OTROOOOOOO __________________");
+        ProductoDeVenta otro = new Otro("Papas Frutas con yoogurt", 0.75 , 100);
+        appBarPoliEats.agregarProductoIzquierda(otro);
+        appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.OTRO);
 
     }
 }
