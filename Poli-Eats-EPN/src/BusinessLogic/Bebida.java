@@ -6,7 +6,7 @@ public class Bebida extends ProductoDeVenta{
     }
 
     @Override
-    public String getCategoría() {
-        return "Bebida";
+    public Categoría getCategoría() {
+        return Categoría.BEBIDA;
     }
 }

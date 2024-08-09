@@ -6,7 +6,7 @@ public class Postre extends ProductoDeVenta {
     }
 
     @Override
-    public String getCategoría() {
-        return "Postre";
+    public Categoría getCategoría() {
+        return Categoría.POSTRE;
     }
 }
