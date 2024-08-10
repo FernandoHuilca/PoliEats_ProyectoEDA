@@ -1,6 +1,6 @@
-CocaCola
-0.5
-100
+Coca cola
+1.0
+1
 @../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 Pepsi
 0.5
@@ -9,8 +9,4 @@ Pepsi
 IncaCola
 0.25
 80
-@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
-Switch
-1.5
-500
 @../Data/imagenes/ImagenesProductos/amburguesa.jpeg

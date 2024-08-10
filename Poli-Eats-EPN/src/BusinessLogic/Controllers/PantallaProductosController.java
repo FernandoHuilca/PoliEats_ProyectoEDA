@@ -262,6 +262,8 @@ public class PantallaProductosController implements Initializable {
             String categoria = producto.getCategoría().getCategoríaString();
             this.categoriaSeleccionada = categoria;
             btnMenuCategorias.setText("Categoría: " + categoria);
+            
+            this.rutaImagen = producto.getRutaImagen();
         }
     }
    
@@ -315,6 +317,8 @@ public class PantallaProductosController implements Initializable {
                     
                     //appBARmodificarProducto.(producto)
                     
+                    this.appBarPoliEats.modificarProductoDelInventario(producto, auxProducto);
+                    
                     producto.setNombre(auxProducto.getNombre());
                     producto.setPrecio(auxProducto.getPrecio());
                     producto.setStock(auxProducto.getStock());
@@ -351,11 +355,9 @@ public class PantallaProductosController implements Initializable {
             alert.showAndWait();
         }
         else {
-            //appBareliminar (Producto);
-            
+            this.appBarPoliEats.eliminarProductoDelInventario(producto);
             this.listaProductos.remove(producto);
             this.tblCategorias.refresh();
-          
         }
     }
 
