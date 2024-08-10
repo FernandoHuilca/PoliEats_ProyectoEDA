@@ -15,7 +15,7 @@ public class AppBarPoliEats {
         this.listSimpleProductos = new ListaSimple<>();
         this.colaDePedidos = new ColaSimple<>();
         this.contadorDeAdministradores = 0;
-        inicializarAdministradores();
+       // inicializarAdministradores();
     }
 
     public static AppBarPoliEats getInstance() {
@@ -87,7 +87,11 @@ public class AppBarPoliEats {
     public int getNúmeroDePedidos() {
         return colaDePedidos.getNumeroDeDatos();
     }
-
+    
+    public int getContadorAdministradores(){
+        return contadorDeAdministradores;
+    }
+    
     public String getNombreDelClienteDelPedido(int índiceDelPedido) {
         return colaDePedidos.getDato(índiceDelPedido).getNombreDelCliente();
     }
@@ -154,6 +158,14 @@ public class AppBarPoliEats {
         return listSimpleProductos.getDato(índiceDelProducto).setStock(cantidadDeStock);
     }
 
-
-
+    public void eliminarProductoDelInventario(ProductoDeVenta producto){
+        listSimpleProductos.eliminarDato(producto);
+    }
+    public ProductoDeVenta buscarProductoDelInventario(ProductoDeVenta producto){
+        return listSimpleProductos.buscarDato(producto);
+    }
+    public boolean modificarProductoDelInventario(ProductoDeVenta productoActual, ProductoDeVenta nuevoProducto){
+        return listSimpleProductos.modificarDato(productoActual, nuevoProducto);
+    }
 }
+

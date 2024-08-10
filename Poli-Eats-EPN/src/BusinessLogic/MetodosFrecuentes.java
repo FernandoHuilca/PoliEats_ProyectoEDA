@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 import javafx.scene.control.Alert;
 
 public class MetodosFrecuentes {
+    
+         private static OrdenamientoPorMergeSort ordenamientoPorMergeSort = new OrdenamientoPorMergeSort();
 
     public static void cambiarVentana(Stage currentStage, String rutaFXML, String titulo) {
         try {
@@ -25,6 +27,14 @@ public class MetodosFrecuentes {
         }
     }
 
+    public static void ordenarMegerSort(int[] arreglo){
+        ordenamientoPorMergeSort.ordenar(arreglo);
+    }
+    
+    public static void ordenarMegerSort(double[] arreglo){
+        ordenamientoPorMergeSort.ordenar(arreglo);
+    }
+    
     public static void mostrarAlerta(String titulo, String mensaje) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(titulo);
