@@ -4,6 +4,7 @@
  */
 package BusinessLogic.Controllers;
 
+import BusinessLogic.AppBarPoliEats;
 import BusinessLogic.Bebida;
 import BusinessLogic.ComidaRápida;
 import BusinessLogic.Postre;
@@ -33,6 +34,8 @@ import javafx.scene.input.MouseEvent;
  * @author mateo
  */
 public class PantallaProductosController implements Initializable {
+    
+    AppBarPoliEats appBarPoliEats = AppBarPoliEats.getInstance();
     
     @FXML
     private Button btnModificar;
@@ -110,8 +113,15 @@ public class PantallaProductosController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         listaProductos = FXCollections.observableArrayList();
         listaFiltrada = new FilteredList<>(listaProductos, p -> true);
+        
+        for (int i = 0; i < appBarPoliEats.getNúmeroDeProductosDelInventario(); i++){
+            this.listaProductos.add(appBarPoliEats.getProductoDelInventario(i));
+        }
+        
+        this.tblCategorias.setItems(listaProductos);
         
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colPrecio.setCellValueFactory(new PropertyValueFactory("precio"));
