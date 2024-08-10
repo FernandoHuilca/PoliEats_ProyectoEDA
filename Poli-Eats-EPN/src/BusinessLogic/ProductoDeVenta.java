@@ -7,12 +7,14 @@ public abstract class ProductoDeVenta {
     private String nombre;
     private double precio;
     private int stock;
-    private String categoría;
+    private Categoría categoría;
+    private String rutaImagen;
 
-    public ProductoDeVenta(String nombre, double precio, int stock) {
+    public ProductoDeVenta(String nombre, double precio, int stock, String rutaImagen) {
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
+        this.rutaImagen = rutaImagen;
         this.categoría = getCategoría();
     }
 
@@ -50,8 +52,14 @@ public abstract class ProductoDeVenta {
     public double getPrecio() {
         return precio;
     }
+    public String getRutaImagen(){
+        return rutaImagen ;
+    }
+    public void setRutaImagen(String nuevaRuta){
+        this.rutaImagen = nuevaRuta;
+    }
 
-    public abstract String getCategoría();
+    public abstract Categoría getCategoría();
 
     @Override
     public int hashCode() {

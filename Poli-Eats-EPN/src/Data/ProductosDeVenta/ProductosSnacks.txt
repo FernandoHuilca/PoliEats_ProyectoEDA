@@ -1,12 +1,16 @@
 Papitas
 1.00
 150
+@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 Doritos
 1.50
 120
+@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 Maní
 0.75
 200
+@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 Chicles
 0.25
 300
+@../Data/imagenes/ImagenesProductos/amburguesa.jpeg

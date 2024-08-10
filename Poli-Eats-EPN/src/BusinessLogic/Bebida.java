@@ -1,12 +1,12 @@
 package BusinessLogic;
 
 public class Bebida extends ProductoDeVenta{
-    public Bebida(String nombre, double precio, int stock) {
-        super(nombre, precio,stock);
+    public Bebida(String nombre, double precio, int stock, String rutaImagen) {
+        super(nombre, precio,stock, rutaImagen);
     }
 
     @Override
-    public String getCategoría() {
-        return "Bebida";
+    public Categoría getCategoría() {
+        return Categoría.BEBIDA;
     }
 }

@@ -1,12 +1,16 @@
 BrownieMágico
 2.00
 60
+@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 Cheesecake
 3.50
 40
+@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 Helado
 1.25
 100
+@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 TartaDeManzana
 2.50
 50
+@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
