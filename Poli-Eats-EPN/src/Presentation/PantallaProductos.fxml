@@ -15,9 +15,14 @@
 
 <AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: ffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.PantallaProductosController">
    <children>
-      <ImageView fitHeight="700.0" fitWidth="1100.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: #F14647;">
+      <ImageView fitHeight="700.0" fitWidth="1100.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Downloads/9c3d48926c7e94966def78c6e702f919.png" />
+            <Image url="@../Data/imagenes/FondoInterfazProductos.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="89.0" fitWidth="507.0" layoutX="320.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Data/imagenes/TituloInterfazProductos.png" />
          </image>
       </ImageView>
       <TableView fx:id="tblCategorias" layoutX="300.0" layoutY="186.0" onMouseClicked="#seleccionarProducto" prefHeight="410.0" prefWidth="716.0">
@@ -31,47 +36,49 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </TableView>
-      <Text fill="#1f272d" layoutX="89.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto:">
+      <Text fill="#1f272d" layoutX="84.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto:">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font></Text>
-      <Text layoutX="88.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
+      <Text layoutX="83.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font></Text>
-      <Text layoutX="89.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock:">
+      <Text layoutX="84.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock:">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font></Text>
-      <Text layoutX="91.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoría:">
+      <Text layoutX="86.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoría:">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font></Text>
-      <Button fx:id="btnAgregar" layoutX="87.0" layoutY="522.0" mnemonicParsing="false" onAction="#agregarProducto" prefHeight="23.0" prefWidth="165.0" style="-fx-background-color: #F14647;" text="Agregar producto" textFill="WHITE">
+      <Button fx:id="btnAgregar" layoutX="82.0" layoutY="542.0" mnemonicParsing="false" onAction="#agregarProducto" prefHeight="23.0" prefWidth="165.0" style="-fx-background-color: #F14647;" text="Agregar producto" textFill="WHITE">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <TextField fx:id="txtNombre" layoutX="87.0" layoutY="270.0" prefHeight="25.0" prefWidth="165.0">
+      <TextField fx:id="txtNombre" layoutX="82.0" layoutY="240.0" prefHeight="25.0" prefWidth="165.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></TextField>
-      <TextField fx:id="txtPrecio" layoutX="87.0" layoutY="330.0" prefHeight="25.0" prefWidth="165.0">
+      <TextField fx:id="txtPrecio" layoutX="82.0" layoutY="300.0" prefHeight="25.0" prefWidth="165.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></TextField>
-      <TextField fx:id="txtStock" layoutX="87.0" layoutY="390.0" prefHeight="25.0" prefWidth="165.0">
+      <TextField fx:id="txtStock" layoutX="82.0" layoutY="360.0" prefHeight="25.0" prefWidth="165.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></TextField>
-      <MenuButton fx:id="btnMenuCategorias" alignment="CENTER" layoutX="87.0" layoutY="454.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="165.0" style="-fx-cursor: #FFFFFF;" text="Elegir categoría">
+      <MenuButton fx:id="btnMenuCategorias" alignment="CENTER" layoutX="82.0" layoutY="485.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="165.0" text="Elegir categoría">
         <items>
           <MenuItem fx:id="txtCategoriaBebida" mnemonicParsing="false" text="Bebida" />
           <MenuItem fx:id="txtCategoriaComidaRápida" mnemonicParsing="false" text="Comida rápida" />
           <MenuItem fx:id="txtCategoriaPostre" mnemonicParsing="false" text="Postre" />
           <MenuItem fx:id="txtCategoriaSnack" mnemonicParsing="false" text="Snack" />
+          <MenuItem fx:id="txtCategoriaFruta" mnemonicParsing="false" text="Fruta" />
+          <MenuItem fx:id="txtCategoriaOtro" mnemonicParsing="false" text="Otro" />
         </items>
          <font>
             <Font name="Arial" size="12.0" />
@@ -100,6 +107,8 @@
           <MenuItem fx:id="filtroCategoriaComidaRapida" mnemonicParsing="false" text="Comida rápida" />
           <MenuItem fx:id="filtroCategoriaPostre" mnemonicParsing="false" text="Postre" />
           <MenuItem fx:id="filtroCategoriaSnack" mnemonicParsing="false" text="Snack" />
+          <MenuItem fx:id="filtroCategoriaFruta" mnemonicParsing="false" text="Fruta" />
+          <MenuItem fx:id="filtroCategoriaOtro" mnemonicParsing="false" text="Otro" />
           <MenuItem fx:id="filtroMostrarTodos" text="Mostrar Todos" />
         </items>
          <font>
@@ -109,10 +118,16 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuButton>
-      <ImageView fitHeight="89.0" fitWidth="507.0" layoutX="320.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Downloads/PRODUCTOS%20LETRA.png" />
-         </image>
-      </ImageView>
+      <Text layoutX="84.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imagen:">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnAnadirImagen" layoutX="85.0" layoutY="422.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Añadir imagen">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnRegresar" layoutX="973.0" layoutY="34.0" mnemonicParsing="false" onAction="#regresarInterfazListaPedidos" text="Regresar" />
    </children>
 </AnchorPane>

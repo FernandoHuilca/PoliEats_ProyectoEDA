@@ -11,6 +11,6 @@ IncaCola
 80
 @../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 Switch
-1.50
+1.5
 500
 @../Data/imagenes/ImagenesProductos/amburguesa.jpeg

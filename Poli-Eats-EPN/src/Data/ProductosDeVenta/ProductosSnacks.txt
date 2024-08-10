@@ -1,9 +1,9 @@
 Papitas
-1.00
+1.0
 150
 @../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 Doritos
-1.50
+1.5
 120
 @../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 Maní
