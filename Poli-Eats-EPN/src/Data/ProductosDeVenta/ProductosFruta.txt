@@ -1,12 +1,16 @@
 Manzana
 0.5
 100
+@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 Pera
 0.5
 250
+@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 Sandía
 0.25
 80
+@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 Switch
 1.50
 500
+@../Data/imagenes/ImagenesProductos/amburguesa.jpeg

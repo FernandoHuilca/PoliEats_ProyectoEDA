@@ -10,8 +10,8 @@ package BusinessLogic;
  */
 public class Otro extends ProductoDeVenta {
 
-     public Otro(String nombre, double precio, int stock) {
-        super(nombre, precio, stock);
+     public Otro(String nombre, double precio, int stock, String rutaImagen) {
+        super(nombre, precio, stock, rutaImagen);
     }
 
     @Override

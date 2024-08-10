@@ -1,8 +1,8 @@
 package BusinessLogic;
 
 public class Postre extends ProductoDeVenta {
-    public Postre(String nombre, double precio, int stock) {
-        super(nombre, precio, stock);
+    public Postre(String nombre, double precio, int stock, String rutaImagen) {
+        super(nombre, precio, stock, rutaImagen);
     }
 
     @Override

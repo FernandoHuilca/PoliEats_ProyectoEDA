@@ -8,11 +8,13 @@ public abstract class ProductoDeVenta {
     private double precio;
     private int stock;
     private Categoría categoría;
+    private String rutaImagen;
 
-    public ProductoDeVenta(String nombre, double precio, int stock) {
+    public ProductoDeVenta(String nombre, double precio, int stock, String rutaImagen) {
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
+        this.rutaImagen = rutaImagen;
         this.categoría = getCategoría();
     }
 
@@ -49,6 +51,12 @@ public abstract class ProductoDeVenta {
 
     public double getPrecio() {
         return precio;
+    }
+    public String getRutaImagen(){
+        return rutaImagen ;
+    }
+    public void setRutaImagen(String nuevaRuta){
+        this.rutaImagen = nuevaRuta;
     }
 
     public abstract Categoría getCategoría();

@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d0816662-1f0c-4fc5-8648-da186ba5bb31" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BusinessLogic/AppBarPoliEats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BusinessLogic/AppBarPoliEats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BusinessLogic/Bebida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BusinessLogic/Bebida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BusinessLogic/ComidaRápida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BusinessLogic/ComidaRápida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BusinessLogic/Postre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BusinessLogic/Postre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BusinessLogic/ProductoDeVenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BusinessLogic/ProductoDeVenta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BusinessLogic/Snack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BusinessLogic/Snack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/imagenes/LoginAdministradores.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/imagenes/LoginAdministradores.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/imagenes/SingUpAdministradores.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/imagenes/SingUpAdministradores.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +23,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/BusinessLogic/ProductoDeVenta.java" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2kP73m7DvagR22YfmdYq3yyBAZh" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -47,7 +46,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "LoginInterfazFinal",
-    "last_opened_file_path": "C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/Emulador_Arquitectura_Computacional/Emulador_Arquitectura_Computacional_Consola",
+    "last_opened_file_path": "C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/PoliEats_ProyectoEDA",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,6 +77,9 @@
       <option name="presentableId" value="Default" />
       <updated>1723173160296</updated>
       <workItem from="1723173161326" duration="4770000" />
+      <workItem from="1723306096244" duration="547000" />
+      <workItem from="1723307841596" duration="107000" />
+      <workItem from="1723307994237" duration="188000" />
     </task>
     <servers />
   </component>

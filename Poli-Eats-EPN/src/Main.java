@@ -4,6 +4,7 @@ import BusinessLogic.*;
 public class Main {
     public static void main(String[] args) {
 
+        String direccionGeneral = "@../Data/imagenes/ImagenesProductos/amburguesa.jpeg\n";
         // Códigos de escape ANSI para colores
         String ANSI_RESET = "\u001B[0m";
         String ANSI_BLUE = "\u001B[34m";
@@ -32,9 +33,9 @@ public class Main {
 
 
         System.out.println(ANSI_YELLOW +"CASO 2. Agregar producto a la derecha en la app __________________________"+ ANSI_RESET);
-        ProductoDeVenta nuevoProducto = new Bebida("CocaCola", 0.75, 100);
-        ProductoDeVenta nuevoProducto1 = new Postre(" Dona ", 0.80, 25);
-        ProductoDeVenta nuevoProducto2 = new Bebida("Inka Cola", 0.25, 100);
+        ProductoDeVenta nuevoProducto = new Bebida("CocaCola", 0.75, 100,direccionGeneral);
+        ProductoDeVenta nuevoProducto1 = new Postre(" Dona ", 0.80, 25, direccionGeneral);
+        ProductoDeVenta nuevoProducto2 = new Bebida("Inka Cola", 0.25, 100, direccionGeneral);
 
         if (appBarPoliEats.agregarProductoDerecha(nuevoProducto)) {
             System.out.println("Se agregó con éxito");
@@ -121,13 +122,13 @@ public class Main {
         appBarPoliEats.imprimirProductosEnInventario();
 
         System.out.println(ANSI_YELLOW +"Caso 11 : ImprimirProductos que tengo por Categoría ____________________________________"+ ANSI_RESET);
-        ProductoDeVenta nuevoProducto3 = new Postre("Pastel", 0.75, 100);
-        ProductoDeVenta nuevoProducto4 = new Postre("Gelatina", 0.75, 100);
-        ProductoDeVenta nuevoProducto5 = new Snack("Doritos", 0.65, 100);
-        ProductoDeVenta nuevoProducto6 = new Snack("Ruffles", 0.65, 100);
-        ProductoDeVenta nuevoProducto7 = new ComidaRápida("Hamburguesa", 0.65, 100);
-        ProductoDeVenta nuevoProducto8 = new ComidaRápida("Pizza", 0.65, 100);
-        ProductoDeVenta nuevoProducto9 = new ComidaRápida("Salchipapa", 0.65, 100);
+        ProductoDeVenta nuevoProducto3 = new Postre("Pastel", 0.75, 100,direccionGeneral);
+        ProductoDeVenta nuevoProducto4 = new Postre("Gelatina", 0.75, 100,direccionGeneral);
+        ProductoDeVenta nuevoProducto5 = new Snack("Doritos", 0.65, 100,direccionGeneral);
+        ProductoDeVenta nuevoProducto6 = new Snack("Ruffles", 0.65, 100,direccionGeneral);
+        ProductoDeVenta nuevoProducto7 = new ComidaRápida("Hamburguesa", 0.65, 100,direccionGeneral);
+        ProductoDeVenta nuevoProducto8 = new ComidaRápida("Pizza", 0.65, 100,direccionGeneral);
+        ProductoDeVenta nuevoProducto9 = new ComidaRápida("Salchipapa", 0.65, 100,direccionGeneral);
 
         appBarPoliEats.agregarProductoDerecha(nuevoProducto9);
         appBarPoliEats.agregarProductoDerecha(nuevoProducto8);
@@ -197,12 +198,12 @@ public class Main {
         
         
         System.out.println("_______________ FRUTAAAAAAA __________________");
-        ProductoDeVenta fruta = new Fruta("MANZANA", 0.75 , 100);
+        ProductoDeVenta fruta = new Fruta("MANZANA", 0.75 , 100,direccionGeneral);
         appBarPoliEats.agregarProductoIzquierda(fruta);
         appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.FRUTA);
          
         System.out.println("_______________ OTROOOOOOO __________________");
-        ProductoDeVenta otro = new Otro("Papas Frutas con yoogurt", 0.75 , 100);
+        ProductoDeVenta otro = new Otro("Papas Frutas con yoogurt", 0.75 , 100,direccionGeneral);
         appBarPoliEats.agregarProductoIzquierda(otro);
         appBarPoliEats.imprimirProductosDelInventarioPorCategoría(Categoría.OTRO);
 
