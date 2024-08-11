@@ -39,7 +39,9 @@ public class LoginAdminController implements Initializable {
         boolean credencialesValidas = false;
 
         AppBarPoliEats appBarPoliEats = AppBarPoliEats.getInstance();
-        for (Administrador admin : appBarPoliEats.getAdministradores()) {
+        for (int i = 0 ; i < appBarPoliEats.getContadorAdministradores(); i++) {
+            Administrador admin = appBarPoliEats.getAdministradores()[i];
+            System.out.println("nombre: " + admin.getNombre() + "  usuario: " + usuario);
             if (admin.getNombre().equals(usuario) && admin.getContraseña().equals(contraseña)) {
                 credencialesValidas = true;
                 break;

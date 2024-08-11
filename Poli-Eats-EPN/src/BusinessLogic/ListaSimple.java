@@ -103,5 +103,54 @@ public class ListaSimple<T> {
         return true;
     }
 
+    public T buscarDato(T dato) {
+        NodoListaSimple<T> actual = nodoDeInicio;
+        while (actual != null) {
+            if (actual.getDato().equals(dato)) {
+                return actual.getDato(); // Devuelve el dato si lo encuentra
+            }
+            actual = actual.getLiga();
+        }
+        return null; // Devuelve null si no encuentra el dato
+    }
+
+    public boolean eliminarDato(T dato) {
+        if (nodoDeInicio == null) {
+            return false; // La lista está vacía
+        }
+
+        if (nodoDeInicio.getDato().equals(dato)) {
+            nodoDeInicio = nodoDeInicio.getLiga();
+            contadorDeNodos--;
+            return true; // Eliminado el nodo al inicio
+        }
+
+        NodoListaSimple<T> actual = nodoDeInicio;
+        while (actual.getLiga() != null) {
+            if (actual.getLiga().getDato().equals(dato)) {
+                actual.setLiga(actual.getLiga().getLiga());
+                contadorDeNodos--;
+                return true; // Nodo eliminado
+            }
+            actual = actual.getLiga();
+        }
+        return false; // El dato no fue encontrado
+    }
+
+  public boolean modificarDato(T datoActual, T nuevoDato) {
+    NodoListaSimple<T> actual = nodoDeInicio;
+    
+    // Recorre la lista buscando el nodo con el dato que se quiere modificar
+    while (actual != null) {
+        if (actual.getDato().equals(datoActual)) {
+            actual.setDato(nuevoDato); // Modifica el dato
+            return true; // Indica que la modificación fue exitosa
+        }
+        actual = actual.getLiga();
+    }
+    
+    return false; // Devuelve false si no se encontró el dato a modificar
+}
+
 }
 
