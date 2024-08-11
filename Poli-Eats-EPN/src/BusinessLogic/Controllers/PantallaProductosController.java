@@ -105,6 +105,7 @@ public class PantallaProductosController implements Initializable {
             String nombre = this.txtNombre.getText();
             double precio = Double.parseDouble(this.txtPrecio.getText());
             int stock = Integer.parseInt(this.txtStock.getText());
+            //Strin ruta = 
 
             if (categoriaSeleccionada == null || categoriaSeleccionada.isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -118,16 +119,16 @@ public class PantallaProductosController implements Initializable {
             ProductoDeVenta producto;
             switch (categoriaSeleccionada) {
                 case "Bebida":
-                    producto = new Bebida(nombre, precio, stock);
+                    producto = new Bebida(nombre, precio, stock, null);
                     break;
                 case "Comida rápida":
-                    producto = new ComidaRápida(nombre, precio, stock);
+                    producto = new ComidaRápida(nombre, precio, stock, null);
                 break;
                 case "Postre":
-                    producto = new Postre(nombre, precio, stock);
+                    producto = new Postre(nombre, precio, stock, null);
                     break;
                 case "Snack":
-                    producto = new Snack(nombre, precio, stock); // Crea esta clase si es necesario
+                    producto = new Snack(nombre, precio, stock, null); // Crea esta clase si es necesario
                     break;
                 default:
                     throw new IllegalArgumentException("Categoría desconocida: " + categoriaSeleccionada);

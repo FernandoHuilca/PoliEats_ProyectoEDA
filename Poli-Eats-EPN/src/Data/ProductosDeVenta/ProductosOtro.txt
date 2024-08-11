@@ -1,4 +1,4 @@
 PapasFritas con yogurt
 1.75
 200
-@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
+/Data/imagenes/ImagenesProductos/amburguesa.jpeg
