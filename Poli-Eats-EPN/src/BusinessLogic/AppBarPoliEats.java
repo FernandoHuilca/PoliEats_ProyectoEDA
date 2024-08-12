@@ -9,12 +9,16 @@ public class AppBarPoliEats {
     private ListaSimple<ProductoDeVenta> listSimpleProductos;
     private ColaSimple<Pedido> colaDePedidos;
     private int contadorDeAdministradores;
+    private Ganancia[] ganancias;
+    private int contadorDeGanancias; 
 
     private AppBarPoliEats() {
         this.administradores = new Administrador[MAX_ADMINISTRADORES];
         this.listSimpleProductos = new ListaSimple<>();
         this.colaDePedidos = new ColaSimple<>();
         this.contadorDeAdministradores = 0;
+        this.ganancias = new Ganancia[1000];
+        this.contadorDeGanancias = 0; 
        // inicializarAdministradores();
     }
 
@@ -24,7 +28,12 @@ public class AppBarPoliEats {
         }
         return instance;
     }
-
+    
+    public boolean agregarGanancia(Ganancia ganancia){
+        ganancias[contadorDeGanancias++] = ganancia;
+        return true;
+    }
+    
     private void inicializarAdministradores() {
         for (int i = 0; i < MAX_ADMINISTRADORES; i++) {
             administradores[i] = new Administrador();
@@ -166,6 +175,14 @@ public class AppBarPoliEats {
     }
     public boolean modificarProductoDelInventario(ProductoDeVenta productoActual, ProductoDeVenta nuevoProducto){
         return listSimpleProductos.modificarDato(productoActual, nuevoProducto);
+    }
+
+    public int getContadorDeGanancias() {
+        return contadorDeGanancias;
+    }
+
+    public Ganancia getGanancia(int índice) {
+        return ganancias[índice];
     }
 }
 
