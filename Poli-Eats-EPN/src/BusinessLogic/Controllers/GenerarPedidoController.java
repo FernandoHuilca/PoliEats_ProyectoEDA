@@ -48,6 +48,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
 /**
@@ -124,6 +125,8 @@ public class GenerarPedidoController implements Initializable {
     String nombreReal, nombreAuxDelCliente;
     double precioReal;  
     private boolean verificaciónDeNuevoNombre = false;
+    @FXML
+    private Button btnRegresar;
         
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -220,17 +223,20 @@ public class GenerarPedidoController implements Initializable {
             MetodosFrecuentes.mostrarAlerta("SIN NOMBRE DEL CLIENTE", "Antes de Continuar Ingrese y Confirme el Nombre del Cliente...");
             return;
         }
-        Pedido nuevoPedido = new Pedido(nombreAuxDelCliente,items);
-        bar.agregarPedido(nuevoPedido);
+
+        Pedido nuevoPedido = new Pedido(nombreAuxDelCliente, items);
+        bar.agregarPedido(nuevoPedido); // Agregar el pedido al singleton
+
+        // Resetear estado
         verificaciónDeNuevoNombre = false;
         productosSeleccionados.clear();
         tblProductosSeleccionados.getItems().clear();
-        
         items = new ListaSimple();
-        
+
         this.pedidoGenerado.add(nuevoPedido);
         this.tblTotalAPagar.setItems(pedidoGenerado);
     }
+
     @FXML
     private void confirmarNombre(ActionEvent event) {
         verificaciónDeNuevoNombre = true;
@@ -322,5 +328,10 @@ public class GenerarPedidoController implements Initializable {
         for(ProductoDeVenta sacarInfo : original){
             cargar.agregarALaDerecha(sacarInfo);
         }
+    }
+
+    @FXML
+    private void regresarAPantallaDelAdmin(ActionEvent event) {
+        MetodosFrecuentes.cambiarVentana((Stage) btnRegresar.getScene().getWindow(), "/Presentation/PantallaDelAdministrador.fxml", "Pantalla del Admin");
     }
 }
