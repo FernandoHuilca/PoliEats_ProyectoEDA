@@ -12,21 +12,21 @@
 
 <AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.PantallaDelAdministradorController">
    <children>
-      <Button fx:id="botonAnadirPedido" defaultButton="true" layoutX="85.0" layoutY="246.0" mnemonicParsing="false" onAction="#anadirPedido" prefHeight="106.0" prefWidth="228.0" style="-fx-cursor: hand; -fx-background-color: #F14647;" text="Añadir Pedido" textFill="WHITE">
+      <Button fx:id="botonAnadirPedido" defaultButton="true" layoutX="85.0" layoutY="244.0" mnemonicParsing="false" onAction="#anadirPedido" prefHeight="58.0" prefWidth="228.0" style="-fx-cursor: hand; -fx-background-color: #F14647;" text="Añadir Pedido" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font></Button>
-      <Button fx:id="botonEliminarPedido" defaultButton="true" layoutX="85.0" layoutY="375.0" mnemonicParsing="false" onAction="#eliminarPedido" prefHeight="106.0" prefWidth="228.0" style="-fx-cursor: hand; -fx-background-color: #F14647;" text="Eliminar Pedido" textFill="WHITE">
+      <Button fx:id="botonEliminarPedido" defaultButton="true" layoutX="85.0" layoutY="358.0" mnemonicParsing="false" onAction="#eliminarPedido" prefHeight="58.0" prefWidth="228.0" style="-fx-cursor: hand; -fx-background-color: #F14647;" text="Eliminar Pedido" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="botonDeProductos" defaultButton="true" layoutX="87.0" layoutY="504.0" mnemonicParsing="false" onAction="#dirigirAPantallaDeProductos" prefHeight="106.0" prefWidth="228.0" style="-fx-cursor: hand; -fx-background-color: #F14647;" text="Prodcutos" textFill="WHITE">
+      <Button fx:id="botonDeProductos" defaultButton="true" layoutX="85.0" layoutY="468.0" mnemonicParsing="false" onAction="#dirigirAPantallaDeProductos" prefHeight="58.0" prefWidth="228.0" style="-fx-cursor: hand; -fx-background-color: #F14647;" text="Productos" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font>
       </Button>
-      <TableView fx:id="tablaPedidos" layoutX="432.0" layoutY="150.0" prefHeight="534.0" prefWidth="634.0">
+      <TableView fx:id="tablaPedidos" layoutX="428.0" layoutY="149.0" prefHeight="534.0" prefWidth="634.0">
          <columns>
             <TableColumn fx:id="colNumeroPedido" prefWidth="64.800048828125" text="N_Pedido" />
             <TableColumn fx:id="colNombre" prefWidth="197.60003662109375" text="NOMBRE" />
@@ -35,21 +35,26 @@
             <TableColumn fx:id="colTotal" prefWidth="71.199951171875" text="TOTAL" />
          </columns>
       </TableView>
-      <Text layoutX="508.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PEDIDOS PENDIENTES">
+      <Text layoutX="492.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PEDIDOS PENDIENTES">
          <font>
             <Font name="Cooper Black" size="42.0" />
          </font>
       </Text>
-      <Button fx:id="btnRegresar" layoutX="1001.0" layoutY="43.0" mnemonicParsing="false" onAction="#regresarAPantallaDelLogin" text="Regresar" />
-      <Label fx:id="lblUsuario" layoutX="171.0" layoutY="69.0" prefHeight="57.0" prefWidth="182.0" text="Usuario" textAlignment="CENTER">
+      <Button fx:id="btnRegresar" layoutX="998.0" layoutY="29.0" mnemonicParsing="false" onAction="#regresarAPantallaDelLogin" text="Regresar" />
+      <Label fx:id="lblUsuario" layoutX="108.0" layoutY="42.0" prefHeight="58.0" prefWidth="334.0" text="Administrador" textAlignment="CENTER">
          <font>
-            <Font name="Cooper Black" size="42.0" />
+            <Font name="Cooper Black" size="36.0" />
          </font>
       </Label>
-      <ImageView fitHeight="130.0" fitWidth="182.0" layoutX="28.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="76.0" fitWidth="83.0" layoutX="28.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Data/imagenes/ImagenUsuario.jpeg" />
          </image>
       </ImageView>
+      <Button fx:id="btnGanancias" layoutX="85.0" layoutY="574.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="228.0" style="-fx-background-color: #F14647; -fx-cursor: hand;" text="Ganancias" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
