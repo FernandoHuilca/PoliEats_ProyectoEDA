@@ -1,19 +1,4 @@
-<<<<<<< HEAD
-=======
-Hamburguesa
-3.00
-80
-/Data/imagenes/ImagenesProductos/amburguesa.jpeg
-HotDog
-2.50
-100
-/Data/imagenes/ImagenesProductos/amburguesa.jpeg
-Tacos
-2.00
-150
-/Data/imagenes/ImagenesProductos/amburguesa.jpeg
-PapasFritas
-1.75
-200
-/Data/imagenes/ImagenesProductos/amburguesa.jpeg
->>>>>>> origin/AlisonPantallaDelAdmin
+hola
+1.0
+1
+C:\Users\mateo\OneDrive\Pictures\Screenshots\Screenshot 2024-08-05 110745.png

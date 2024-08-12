@@ -179,7 +179,6 @@ public class PantallaProductosController implements Initializable {
             String nombre = this.txtNombre.getText();
             double precio = Double.parseDouble(this.txtPrecio.getText());
             int stock = Integer.parseInt(this.txtStock.getText());
-<<<<<<< HEAD
             
             if (rutaImagen == null || rutaImagen.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -189,11 +188,7 @@ public class PantallaProductosController implements Initializable {
             alert.showAndWait();
             return;
             }
-            
-=======
-            //Strin ruta = 
-
->>>>>>> origin/AlisonPantallaDelAdmin
+           
             if (categoriaSeleccionada == null || categoriaSeleccionada.isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setHeaderText(null);
@@ -205,7 +200,6 @@ public class PantallaProductosController implements Initializable {
 
             ProductoDeVenta producto;
             switch (categoriaSeleccionada) {
-<<<<<<< HEAD
                 case "Bebida" -> producto = new Bebida(nombre, precio, stock, rutaImagen);
                 case "Comida rápida" -> producto = new ComidaRápida(nombre, precio, stock, rutaImagen);
                 case "Postre" -> producto = new Postre(nombre, precio, stock, rutaImagen);
@@ -216,7 +210,9 @@ public class PantallaProductosController implements Initializable {
             }
 
             if (!this.listaProductos.contains(producto)){
-
+                
+                this.appBarPoliEats.agregarProductoDerecha(producto);
+                
                 this.listaProductos.add(producto);
                 this.tblCategorias.setItems(listaProductos);
                 
@@ -226,22 +222,6 @@ public class PantallaProductosController implements Initializable {
                 alert.setTitle("Error");
                 alert.setContentText("El producto ya existe");
                 alert.showAndWait();
-=======
-                case "Bebida":
-                    producto = new Bebida(nombre, precio, stock, null);
-                    break;
-                case "Comida rápida":
-                    producto = new ComidaRápida(nombre, precio, stock, null);
-                break;
-                case "Postre":
-                    producto = new Postre(nombre, precio, stock, null);
-                    break;
-                case "Snack":
-                    producto = new Snack(nombre, precio, stock, null); // Crea esta clase si es necesario
-                    break;
-                default:
-                    throw new IllegalArgumentException("Categoría desconocida: " + categoriaSeleccionada);
->>>>>>> origin/AlisonPantallaDelAdmin
             }
 
         } catch (NumberFormatException e) {
@@ -336,9 +316,7 @@ public class PantallaProductosController implements Initializable {
                 }
                 
                 if (!this.listaProductos.contains(auxProducto)){
-                    
-                    //appBARmodificarProducto.(producto)
-                    
+                                        
                     this.appBarPoliEats.modificarProductoDelInventario(producto, auxProducto);
                     
                     producto.setNombre(auxProducto.getNombre());
@@ -378,6 +356,7 @@ public class PantallaProductosController implements Initializable {
         }
         else {
             this.appBarPoliEats.eliminarProductoDelInventario(producto);
+            
             this.listaProductos.remove(producto);
             this.tblCategorias.refresh();
         }
@@ -400,19 +379,15 @@ public class PantallaProductosController implements Initializable {
     @FXML
     private void regresarInterfazListaPedidos(ActionEvent event) {
         actualizarDatosProductos();
-        MetodosFrecuentes.cambiarVentana((Stage) btnRegresar.getScene().getWindow(), "/Presentation/VerificacionCodigo.fxml", "Inicio");
+        MetodosFrecuentes.cambiarVentana((Stage) btnRegresar.getScene().getWindow(), "/Presentation/PantallaDelAdministrador.fxml", "Inicio");
     }
-    
-    
-    // método para escribir  
-    //que vuelva a leer la app (no)
     
     
     private void actualizarDatosProductos() {
         // Lista de archivos de productos y sus tipos correspondientes
         String[][] archivosProductos = {
             {"src/Data/ProductosDeVenta/ProductosBebidas.txt", "Bebida"},
-            {"src/Data/ProductosDeVenta/ProductosComidaRapida.txt", "ComidaRapida"},
+            {"src/Data/ProductosDeVenta/ProductosComidaRapida.txt", "ComidaRápida"},
             {"src/Data/ProductosDeVenta/ProductosPostre.txt", "Postre"},
             {"src/Data/ProductosDeVenta/ProductosSnacks.txt", "Snack"},
             {"src/Data/ProductosDeVenta/ProductosFruta.txt", "Fruta"},
