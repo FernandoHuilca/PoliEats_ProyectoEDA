@@ -51,7 +51,7 @@
             <Image url="@../Data/imagenes/ImagenUsuario.jpeg" />
          </image>
       </ImageView>
-      <Button fx:id="btnGanancias" layoutX="85.0" layoutY="574.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="228.0" style="-fx-background-color: #F14647; -fx-cursor: hand;" text="Ganancias" textFill="WHITE">
+      <Button fx:id="btnGanancias" layoutX="85.0" layoutY="574.0" mnemonicParsing="false" onAction="#dirigirAPantallaDeGananacias" prefHeight="58.0" prefWidth="228.0" style="-fx-background-color: #F14647; -fx-cursor: hand;" text="Ganancias" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font>

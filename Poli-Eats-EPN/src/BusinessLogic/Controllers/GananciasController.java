@@ -83,7 +83,7 @@ public class GananciasController implements Initializable {
 
     @FXML
     private void RegresarAnteriorPeztania(ActionEvent event) {
-        MetodosFrecuentes.cambiarVentana((Stage)ButtonRegresar.getScene().getWindow(), "/Presentation/PantallaInicioBarUsuarios.fxml", "Inicio");
+        MetodosFrecuentes.cambiarVentana((Stage)ButtonRegresar.getScene().getWindow(), "/Presentation/PantallaDelAdministrador.fxml", "Inicio");
     }
 
 }

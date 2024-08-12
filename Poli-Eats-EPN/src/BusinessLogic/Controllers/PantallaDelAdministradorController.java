@@ -58,6 +58,8 @@ public class PantallaDelAdministradorController implements Initializable {
     private TableColumn<Pedido, String> colCantidad;
     @FXML
     private Label lblUsuario;
+    @FXML
+    private Button btnGanancias;
  
 
 
@@ -162,5 +164,10 @@ public class PantallaDelAdministradorController implements Initializable {
     @FXML
     private void regresarAPantallaDelLogin(ActionEvent event) {
         MetodosFrecuentes.cambiarVentana((Stage) btnRegresar.getScene().getWindow(), "/Presentation/LoginAdmin.fxml", "Pantalla del Login");
+    }
+
+    @FXML
+    private void dirigirAPantallaDeGananacias(ActionEvent event) {
+        MetodosFrecuentes.cambiarVentana(((Stage) btnGanancias.getScene().getWindow()), "/Presentation/ganancias.fxml", "Pantalla De Productos");
     }
 }
