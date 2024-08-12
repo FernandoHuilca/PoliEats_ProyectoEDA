@@ -49,7 +49,7 @@ public class LoginAdminController implements Initializable {
         }
 
         if (credencialesValidas) {
-            cambiarVentana("/Presentation/PantallaInicioBarUsuarios.fxml", "Pantalla de Inicio Bar");
+            cambiarVentana("/Presentation/PantallaDelAdministrador.fxml", "Pantalla de Inicio Bar");
         } else {
             mostrarAlerta("Error", "Usuario o contraseña incorrectos.");
         }

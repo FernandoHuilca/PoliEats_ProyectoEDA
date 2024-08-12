@@ -52,7 +52,7 @@ public class SaludoBienvenidaController implements Initializable {
 
     private void showExplanationScreen() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Presentation/PantallaProductos.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Presentation/LoginAdmin.fxml"));
             Parent root = loader.load();
             // Cambia la escena en el Stage actual
             stage.setScene(new Scene(root));

@@ -1,12 +1,27 @@
+<<<<<<< HEAD
 Coca cola
 1.0
 1
 @../Data/imagenes/ImagenesProductos/amburguesa.jpeg
+=======
+CocaCola
+0.5
+100
+/Data/imagenes/Hamburguesa.jpg
+>>>>>>> origin/AlisonPantallaDelAdmin
 Pepsi
 0.5
 250
-@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
+/Data/imagenes/ImagenesProductos/amburguesa.jpeg
 IncaCola
 0.25
 80
+<<<<<<< HEAD
 @../Data/imagenes/ImagenesProductos/amburguesa.jpeg
+=======
+/Data/imagenes/Hamburguesa.jpg
+Switch
+1.50
+500
+/Data/imagenes/ImagenesProductos/amburguesa.jpeg
+>>>>>>> origin/AlisonPantallaDelAdmin
