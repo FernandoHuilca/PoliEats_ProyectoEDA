@@ -133,6 +133,7 @@ public class PantallaProductosController implements Initializable {
     private String categoriaSeleccionada;
     
     private String rutaImagen;
+    private String backSlach = "\\";
   
     /**
      * Initializes the controller class.
@@ -371,7 +372,7 @@ public class PantallaProductosController implements Initializable {
         File selectedFile = fileChooser.showOpenDialog(null);
         if (selectedFile != null) {
             System.out.println(rutaImagen);
-            rutaImagen = selectedFile.getAbsolutePath();
+            rutaImagen = "file:" + backSlach + selectedFile.getAbsolutePath();
             System.out.println("Imagen seleccionada: " + rutaImagen); // Puedes mostrar esto en un label si lo prefieres
         }
     }

@@ -1,4 +1,4 @@
-hola
+PapasFritas
 1.0
-1
-C:\Users\mateo\OneDrive\Pictures\Screenshots\Screenshot 2024-08-05 110745.png
+5
+/Data/imagenes/ImagenesProductos/PapasFritasReal.jpg

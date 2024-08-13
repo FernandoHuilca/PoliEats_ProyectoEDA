@@ -40,6 +40,7 @@
           <MenuItem fx:id="txtCategoriaComidaRápida" mnemonicParsing="false" text="Comida Rápida" />
             <MenuItem fx:id="txtCategoriaPostre" mnemonicParsing="false" text="Postre" />
             <MenuItem fx:id="txtCategoriaSnack" mnemonicParsing="false" text="Snack" />
+            <MenuItem fx:id="txtCategoriaFrutas" mnemonicParsing="false" text="Frutas" />
             <MenuItem fx:id="txtCategoriaOtros" mnemonicParsing="false" text="Otros" />
         </items>
       </MenuButton>

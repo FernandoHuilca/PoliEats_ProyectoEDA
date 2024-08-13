@@ -92,6 +92,8 @@ public class GenerarPedidoController implements Initializable {
     @FXML
     private MenuItem txtCategoriaSnack;
     @FXML
+    private MenuItem txtCategoriaFrutas;
+    @FXML
     private MenuItem txtCategoriaOtros;
     
     @FXML
@@ -159,6 +161,7 @@ public class GenerarPedidoController implements Initializable {
         txtCategoriaComidaRápida.setOnAction(e -> seleccionarCategoria("Comida rápida", Categoría.COMIDA_RÁPIDA));
         txtCategoriaPostre.setOnAction(e -> seleccionarCategoria("Postre", Categoría.POSTRE));
         txtCategoriaSnack.setOnAction(e -> seleccionarCategoria("Snack", Categoría.SNACK));
+        txtCategoriaFrutas.setOnAction(e -> seleccionarCategoria("Snack", Categoría.FRUTA));
         txtCategoriaOtros.setOnAction(e ->seleccionarCategoria("Comida rápida", Categoría.OTRO));
         
         //Declarar Paginación
@@ -300,6 +303,10 @@ public class GenerarPedidoController implements Initializable {
                     productoAuxGuardar = new Snack(nombreReal, 0, 0, rutaReal);
                     break;
                 case Categoría.OTRO:
+                    productoMostradoAux = new Otro(nombreReal, 0, 0, rutaReal);
+                    productoAuxGuardar = new Otro(nombreReal, 0, 0, rutaReal);
+                    break;
+                case Categoría.FRUTA:
                     productoMostradoAux = new Otro(nombreReal, 0, 0, rutaReal);
                     productoAuxGuardar = new Otro(nombreReal, 0, 0, rutaReal);
                     break;
