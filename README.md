@@ -10,9 +10,8 @@ PoliEats es un sistema de gestión para el restaurante de la Escuela Politécnic
    - [Árbol Binario de Búsqueda](#3-árbol-binario-de-búsqueda)
 2. [Demostración de Funcionamiento](#demostración-de-funcionamiento)
    - [Visualización del Programa](#visualización-del-programa)
-3. [Manual de Uso](#manual-de-uso)
-4. [Herramientas Usadas](#herramientas-usadas)
-5. [Autores](#autores)
+3. [Herramientas Usadas](#herramientas-usadas)
+4. [Autores](#autores)
 
 ## Funcionamiento del Programa
 
@@ -112,12 +111,6 @@ Para obtener más información sobre la estructura de datos utilizada en este pr
 
 ## Demostración de Funcionamiento
 
-Para ver el funcionamiento del programa, sigue estos pasos:
-
-1. **Inicia el servidor:** `python main.py`
-2. **Abre tu navegador:** Dirígete a `http://localhost:8000`
-3. **Prueba las funcionalidades:** Realiza pedidos, actualiza inventario y gestiona reservas para explorar las capacidades del sistema.
-
 ### Visualización del Programa
 
 <table>
@@ -131,35 +124,17 @@ Para ver el funcionamiento del programa, sigue estos pasos:
   </tr>
 </table>
 
-## Manual de Uso
-
-1. **Instalación:**
-   - Clona el repositorio: `git clone https://github.com/tu_usuario/PoliEats.git`
-   - Navega al directorio del proyecto: `cd PoliEats`
-   - Instala las dependencias: `pip install -r requirements.txt`
-
-2. **Configuración:**
-   - Edita el archivo `config.json` para ajustar los parámetros del sistema según tus necesidades.
-
-3. **Ejecución:**
-   - Ejecuta el programa: `python main.py`
-   - Accede a la interfaz web a través de `http://localhost:8000`
-
-4. **Funciones Principales:**
-   - **Gestionar Pedidos:** Realiza y procesa pedidos desde la interfaz.
-   - **Actualizar Inventario:** Agrega o elimina productos del inventario.
-   - **Gestionar Reservas:** Reserva mesas y visualiza el estado de las reservas.
 
 ## Herramientas Usadas
 
-- **Lenguaje de Programación:** Python
-- **Framework Web:** Flask
-- **Base de Datos:** SQLite
-- **Gestión de Dependencias:** `pip`
+- **Lenguaje de Programación:** Java
+- **Versionamiento:** Git and github
+- **Interfaz gráfica:** Scene Builder y JavaFX
+- **IDEs:** IntelliJ y netbeans
 
 ## Autores
 
-- **Fernando Huilca** - Diseñador Gráfico [@FernandoHuilca](https://github.com/FernandoHuilca)
-- **Mateo Simbaña** - Aguatero [@mateonicolasg](https://github.com/mateonicolasg)
-- **Mateo Quisilema** - El Bromas [@JuanMateoQ](https://github.com/JuanMateoQ)
-- **Alisson Betancourt** - Programadora Principal [@AlizBet44](https://github.com/AlizBet44)
+- **Fernando Huilca** - Programador [@FernandoHuilca](https://github.com/FernandoHuilca)
+- **Mateo Simbaña** - Programador [@mateonicolasg](https://github.com/mateonicolasg)
+- **Mateo Quisilema** - Programador [@JuanMateoQ](https://github.com/JuanMateoQ)
+- **Alisson Betancourt** - Programadora [@AlizBet44](https://github.com/AlizBet44)
