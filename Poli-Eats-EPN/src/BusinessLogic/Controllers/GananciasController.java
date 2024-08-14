@@ -27,12 +27,13 @@ public class GananciasController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        usoEjemplo();
+       // usoEjemplo();
         cargarDatosDeGanancias();
     }
     
     private void usoEjemplo(){
-        //INDICACIONES
+    
+    //INDICACIONES
     //FECHA ACTUAL
     LocalDate fechaActual = LocalDate.now();
     double ganancia1 = 102.2;
@@ -83,7 +84,7 @@ public class GananciasController implements Initializable {
 
     @FXML
     private void RegresarAnteriorPeztania(ActionEvent event) {
-        MetodosFrecuentes.cambiarVentana((Stage)ButtonRegresar.getScene().getWindow(), "/Presentation/PantallaInicioBarUsuarios.fxml", "Inicio");
+        MetodosFrecuentes.cambiarVentana((Stage)ButtonRegresar.getScene().getWindow(), "/Presentation/PantallaDelAdministrador.fxml", "Inicio");
     }
 
 }

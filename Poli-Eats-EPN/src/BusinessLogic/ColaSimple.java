@@ -28,9 +28,9 @@ public class ColaSimple<T> {
         return datos.getNúmeroDeDatos();
     }
 
+    // Método para obtener el pedido
     public T getDato(int i) {
         return datos.getDato(i);
     }
-
 
 }

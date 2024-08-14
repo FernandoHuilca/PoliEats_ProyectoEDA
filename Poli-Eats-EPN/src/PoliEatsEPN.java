@@ -5,6 +5,7 @@ import BusinessLogic.Bebida;
 import BusinessLogic.ComidaRápida;
 import BusinessLogic.Controllers.SaludoBienvenidaController;
 import BusinessLogic.Fruta;
+import BusinessLogic.Ganancia;
 import BusinessLogic.Otro;
 import BusinessLogic.Postre;
 import BusinessLogic.ProductoDeVenta;
@@ -12,6 +13,7 @@ import BusinessLogic.Snack;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDate;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -27,6 +29,7 @@ public class PoliEatsEPN extends Application {
         // Cargar todos los datos del txt
         cargarAdministradores();
         cargarProductos();
+        cargarGananciasDesdeArchivo();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Presentation/SaludoBienvenida.fxml"));
         Parent root = loader.load();
@@ -112,6 +115,28 @@ public class PoliEatsEPN extends Application {
                 }
 
                 appBarPoliEats.agregarProductoDerecha(nuevoProducto);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+     // Nuevo método para cargar ganancias desde un archivo
+    private void cargarGananciasDesdeArchivo() {
+        String archivoGanancias = "src/Data/Ganancias/GananciasFechas.txt";
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(archivoGanancias))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                // Leer año, mes, día y ganancia de la línea
+                int año = Integer.parseInt(linea);
+                int mes = Integer.parseInt(reader.readLine());
+                int dia = Integer.parseInt(reader.readLine());
+                double ganancia = Double.parseDouble(reader.readLine());
+
+                LocalDate fecha = LocalDate.of(año, mes, dia);
+                Ganancia nuevaGanancia = new Ganancia(fecha, ganancia);
+
+                appBarPoliEats.agregarGanancia(nuevaGanancia);
             }
         } catch (IOException e) {
             e.printStackTrace();

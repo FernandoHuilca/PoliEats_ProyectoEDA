@@ -1,4 +1,4 @@
-PapasFritas con yogurt
+Cuaderno
 1.75
-200
-@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
+5
+/Data/imagenes/ImagenesProductos/Cuaderno.jpg

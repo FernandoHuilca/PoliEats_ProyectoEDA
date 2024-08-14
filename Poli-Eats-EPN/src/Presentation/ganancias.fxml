@@ -22,7 +22,7 @@
             <Font name="Arial Black" size="29.0" />
          </font>
       </Label>
-      <BarChart fx:id="BarrasGananciasDias" layoutX="488.0" layoutY="225.0" prefHeight="322.0" prefWidth="464.0" style="-fx-background-color: #5CE4A4;" title="Ganancias Diarias">
+      <BarChart fx:id="BarrasGananciasDias" layoutX="488.0" layoutY="225.0" prefHeight="322.0" prefWidth="464.0" title="Ganancias Diarias">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -30,7 +30,7 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
-      <Button fx:id="ButtonRegresar" layoutX="995.0" layoutY="25.0" mnemonicParsing="false" onAction="#RegresarAnteriorPeztania" prefHeight="36.0" prefWidth="94.0" style="-fx-background-color: #5CE4A4;" text="Regresar" textFill="WHITE">
+      <Button fx:id="ButtonRegresar" layoutX="995.0" layoutY="25.0" mnemonicParsing="false" onAction="#RegresarAnteriorPeztania" prefHeight="36.0" prefWidth="94.0" style="-fx-background-color: #1A2E35;" text="Regresar" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>

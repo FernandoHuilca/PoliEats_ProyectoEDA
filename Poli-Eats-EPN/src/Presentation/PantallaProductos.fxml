@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: ffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BusinessLogic.Controllers.PantallaProductosController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Data/imagenes/FondoInterfazProductos.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="89.0" fitWidth="507.0" layoutX="320.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Data/imagenes/TituloInterfazProductos.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblCategorias" layoutX="300.0" layoutY="186.0" onMouseClicked="#seleccionarProducto" prefHeight="410.0" prefWidth="716.0">
+        <columns>
+          <TableColumn fx:id="colNombre" prefWidth="182.0" text="Nombre" />
+          <TableColumn fx:id="colPrecio" prefWidth="177.0" text="Precio" />
+            <TableColumn fx:id="colStock" prefWidth="164.0" text="Stock" />
+            <TableColumn fx:id="colCategoría" prefWidth="192.0" text="Categoría" />
+        </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <Text fill="#1f272d" layoutX="84.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producto:">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font></Text>
+      <Text layoutX="83.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font></Text>
+      <Text layoutX="84.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock:">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font></Text>
+      <Text layoutX="86.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoría:">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font></Text>
+      <Button fx:id="btnAgregar" layoutX="82.0" layoutY="542.0" mnemonicParsing="false" onAction="#agregarProducto" prefHeight="23.0" prefWidth="165.0" style="-fx-background-color: #F14647;" text="Agregar producto" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TextField fx:id="txtNombre" layoutX="82.0" layoutY="240.0" prefHeight="25.0" prefWidth="165.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <TextField fx:id="txtPrecio" layoutX="82.0" layoutY="300.0" prefHeight="25.0" prefWidth="165.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <TextField fx:id="txtStock" layoutX="82.0" layoutY="360.0" prefHeight="25.0" prefWidth="165.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <MenuButton fx:id="btnMenuCategorias" alignment="CENTER" layoutX="82.0" layoutY="485.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="165.0" text="Elegir categoría">
+        <items>
+          <MenuItem fx:id="txtCategoriaBebida" mnemonicParsing="false" text="Bebida" />
+          <MenuItem fx:id="txtCategoriaComidaRápida" mnemonicParsing="false" text="Comida rápida" />
+          <MenuItem fx:id="txtCategoriaPostre" mnemonicParsing="false" text="Postre" />
+          <MenuItem fx:id="txtCategoriaSnack" mnemonicParsing="false" text="Snack" />
+          <MenuItem fx:id="txtCategoriaFruta" mnemonicParsing="false" text="Fruta" />
+          <MenuItem fx:id="txtCategoriaOtro" mnemonicParsing="false" text="Otro" />
+        </items>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MenuButton>
+      <Button fx:id="btnModificar" layoutX="448.0" layoutY="630.0" mnemonicParsing="false" onAction="#modificarProducto" prefHeight="25.0" prefWidth="165.0" style="-fx-background-color: #F14647;" text="Modificar" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnEliminar" layoutX="700.0" layoutY="630.0" mnemonicParsing="false" onAction="#eliminarProducto" prefHeight="25.0" prefWidth="165.0" style="-fx-background-color: #F14647;" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <MenuButton fx:id="btnFiltroCategorías" alignment="CENTER" layoutX="576.0" layoutY="139.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Filtrar productos">
+        <items>
+          <MenuItem fx:id="filtroCategoriaBebida" mnemonicParsing="false" text="Bebida" />
+          <MenuItem fx:id="filtroCategoriaComidaRapida" mnemonicParsing="false" text="Comida rápida" />
+          <MenuItem fx:id="filtroCategoriaPostre" mnemonicParsing="false" text="Postre" />
+          <MenuItem fx:id="filtroCategoriaSnack" mnemonicParsing="false" text="Snack" />
+          <MenuItem fx:id="filtroCategoriaFruta" mnemonicParsing="false" text="Fruta" />
+          <MenuItem fx:id="filtroCategoriaOtro" mnemonicParsing="false" text="Otro" />
+          <MenuItem fx:id="filtroMostrarTodos" text="Mostrar Todos" />
+        </items>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MenuButton>
+      <Text layoutX="84.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imagen:">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnAnadirImagen" layoutX="85.0" layoutY="422.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Añadir imagen">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnRegresar" layoutX="973.0" layoutY="34.0" mnemonicParsing="false" onAction="#regresarInterfazListaPedidos" text="Regresar" />
+   </children>
+</AnchorPane>

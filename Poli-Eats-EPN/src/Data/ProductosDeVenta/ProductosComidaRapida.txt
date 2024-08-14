@@ -1,16 +1,12 @@
-Hamburguesa
-3.00
-80
-@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
-HotDog
-2.50
-100
-@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
-Tacos
-2.00
-150
-@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
 PapasFritas
-1.75
-200
-@../Data/imagenes/ImagenesProductos/amburguesa.jpeg
+1.0
+4
+/Data/imagenes/ImagenesProductos/PapasFritasReal.jpg
+Hamburguesa
+2.5
+48
+file:\C:\Users\Fernando_Huilca\Downloads\descarga (2).jpeg
+Hot dog
+1.5
+40
+file:\C:\Users\Fernando_Huilca\Documents\Git-Fernando_Huilca\PoliEats_ProyectoEDA\Poli-Eats-EPN\src\Data\imagenes\ImagenesProductos\hotDog.jpeg

@@ -29,10 +29,18 @@ public class AppBarPoliEats {
         return instance;
     }
     
-    public boolean agregarGanancia(Ganancia ganancia){
-        ganancias[contadorDeGanancias++] = ganancia;
-        return true;
+    public boolean agregarGanancia(Ganancia ganancia) {
+    for (int i = 0; i < contadorDeGanancias; i++) {
+        if (ganancias[i].getFecha().equals(ganancia.getFecha())) {
+            ganancias[i].añadirGanancia(ganancias[i].getTotalGanancia() + ganancia.getTotalGanancia());
+            return true; // Salir del método una vez que se encuentra la fecha
+        }
     }
+    // Si no se encuentra una ganancia con la misma fecha, se agrega la nueva
+    ganancias[contadorDeGanancias++] = ganancia;
+    return true;
+}
+
     
     private void inicializarAdministradores() {
         for (int i = 0; i < MAX_ADMINISTRADORES; i++) {
