@@ -2,3 +2,7 @@ Cuaderno
 1.75
 5
 /Data/imagenes/ImagenesProductos/Cuaderno.jpg
+Desayuno continental
+2.5
+61
+file:\C:\Users\Fernando_Huilca\Documents\Git-Fernando_Huilca\PoliEats_ProyectoEDA\Poli-Eats-EPN\src\Data\imagenes\ImagenesProductos\descarga.jpeg

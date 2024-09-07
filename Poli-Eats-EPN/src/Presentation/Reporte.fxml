@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="1100.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="BusinessLogic.Controllers.ReporteController">
+   <children>
+      <Button fx:id="ButtonRegresar" layoutX="968.0" layoutY="34.0" mnemonicParsing="false" onAction="#regresarGananciasGeneral" text="Regresar" />
+      <TableView fx:id="TablaReporte" layoutX="359.0" layoutY="177.0" prefHeight="438.0" prefWidth="421.0">
+        <columns>
+          <TableColumn fx:id="colFecha" prefWidth="147.1999969482422" text="Fecha dia/mes/año" />
+          <TableColumn fx:id="colPedidos" prefWidth="130.4000244140625" text="Pedidos vendidos" />
+            <TableColumn fx:id="colGanancias" minWidth="6.4000244140625" prefWidth="140.79998779296875" text="Ganancia total" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -4,7 +4,7 @@ Papitas
 /Data/imagenes/ImagenesProductos/PapitasFritas.jpg
 Doritos
 1.5
-116
+115
 /Data/imagenes/ImagenesProductos/Doritos.jpg
 Maní
 0.75
@@ -12,5 +12,5 @@ Maní
 /Data/imagenes/ImagenesProductos/Mani.jpg
 Chicles
 0.25
-300
+299
 /Data/imagenes/ImagenesProductos/Chicles.jpg

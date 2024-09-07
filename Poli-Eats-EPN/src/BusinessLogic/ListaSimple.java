@@ -14,10 +14,10 @@ public class ListaSimple<T> {
 
     // Agrega un nuevo dato al inicio de la lista
     public boolean agregarALaIzquierda(T dato) {
-        NodoListaSimple<T> nuevoNodo = new NodoListaSimple<>();
-        nuevoNodo.setDato(dato);
+        NodoListaSimple<T> nuevoNodo = new NodoListaSimple<>(); 
+        nuevoNodo.setDato(dato); 
 
-        if (nodoDeInicio == null) {
+        if (nodoDeInicio == null) { 
             nodoDeInicio = nuevoNodo; // La lista estaba vacía, el nuevo nodo se convierte en el inicio
         } else {
             nuevoNodo.setLiga(nodoDeInicio); // El nuevo nodo apunta al antiguo inicio
@@ -26,7 +26,7 @@ public class ListaSimple<T> {
         contadorDeNodos++; // Se incrementa el contador de nodos
         return true;
     }
-
+   
     // Agrega un nuevo dato al final de la lista
     public boolean agregarALaDerecha(T dato) {
         NodoListaSimple<T> nuevoNodo = new NodoListaSimple<>();
@@ -36,7 +36,7 @@ public class ListaSimple<T> {
             nodoDeInicio = nuevoNodo; // La lista estaba vacía, el nuevo nodo se convierte en el inicio
         } else {
             NodoListaSimple<T> actual = nodoDeInicio;
-            while (actual.getLiga() != null) {
+            while (actual.getLiga() != null) {  
                 actual = actual.getLiga(); // Avanza al último nodo
             }
             actual.setLiga(nuevoNodo); // El último nodo apunta al nuevo nodo

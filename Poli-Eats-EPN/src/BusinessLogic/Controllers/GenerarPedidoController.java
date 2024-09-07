@@ -237,6 +237,8 @@ public class GenerarPedidoController implements Initializable {
         double ganancia = nuevoPedido.getValorTotalAPagar();
         Ganancia nuevaGanancia = new Ganancia(fechaActual,ganancia);
         bar.agregarGanancia(nuevaGanancia);
+        
+        System.out.println("nuevaGanancia.getPedidosVendidos()" + nuevaGanancia.getPedidosVendidos());
         MetodosFrecuentes.guardarGananciasEnArchivo();
 
         // Resetear estado

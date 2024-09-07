@@ -1,6 +1,6 @@
 Manzana
 0.5
-100
+99
 \Data\imagenes\ImagenesProductos\Manzana.jpg
 Pera
 0.5
@@ -8,5 +8,5 @@ Pera
 \Data\imagenes\ImagenesProductos\Pera.jpg
 Sandía
 0.25
-78
+75
 \Data\imagenes\ImagenesProductos\Sandia.jpg

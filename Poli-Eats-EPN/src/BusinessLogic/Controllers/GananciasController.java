@@ -24,6 +24,8 @@ public class GananciasController implements Initializable {
     private BarChart<String, Number> BarrasGananciasDias;
     @FXML
     private Button ButtonRegresar;
+    @FXML
+    private Button buttonReporte;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -85,6 +87,11 @@ public class GananciasController implements Initializable {
     @FXML
     private void RegresarAnteriorPeztania(ActionEvent event) {
         MetodosFrecuentes.cambiarVentana((Stage)ButtonRegresar.getScene().getWindow(), "/Presentation/PantallaDelAdministrador.fxml", "Inicio");
+    }
+
+    @FXML
+    private void verReporte(ActionEvent event) {
+        MetodosFrecuentes.cambiarVentana((Stage) buttonReporte.getScene().getWindow(), "/Presentation/Reporte.fxml", "Reporte");
     }
 
 }

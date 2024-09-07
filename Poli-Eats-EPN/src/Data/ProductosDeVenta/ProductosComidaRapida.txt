@@ -1,12 +1,28 @@
 PapasFritas
 1.0
-4
+1
 /Data/imagenes/ImagenesProductos/PapasFritasReal.jpg
 Hamburguesa
-2.5
-48
-file:\C:\Users\Fernando_Huilca\Downloads\descarga (2).jpeg
+2.25
+44
+file:\C:\Users\Fernando_Huilca\Documents\Git-Fernando_Huilca\PoliEats_ProyectoEDA\Poli-Eats-EPN\src\Data\imagenes\ImagenesProductos\The Ultimate Hamburger.jpeg
 Hot dog
 1.5
-40
+38
 file:\C:\Users\Fernando_Huilca\Documents\Git-Fernando_Huilca\PoliEats_ProyectoEDA\Poli-Eats-EPN\src\Data\imagenes\ImagenesProductos\hotDog.jpeg
+pizza
+1.5
+35
+file:\C:\Users\Fernando_Huilca\Documents\Git-Fernando_Huilca\PoliEats_ProyectoEDA\Poli-Eats-EPN\src\Data\imagenes\ImagenesProductos\Pizza.jpeg
+Helado
+1.5
+34
+file:\C:\Users\Fernando_Huilca\Documents\Git-Fernando_Huilca\PoliEats_ProyectoEDA\Poli-Eats-EPN\src\Data\imagenes\ImagenesProductos\bebidaaa.jpeg
+Helado en baso
+2.0
+36
+file:\C:\Users\Fernando_Huilca\Documents\Git-Fernando_Huilca\PoliEats_ProyectoEDA\Poli-Eats-EPN\src\Data\imagenes\ImagenesProductos\asdfjkas.jpeg
+Flag
+1.0
+44
+file:\C:\Users\Fernando_Huilca\Documents\Git-Fernando_Huilca\PoliEats_ProyectoEDA\Poli-Eats-EPN\src\Data\imagenes\ImagenesProductos\Do NOT REPOST my pins!!!You can save them on your pin boards _AI Foodillustration.jpeg
