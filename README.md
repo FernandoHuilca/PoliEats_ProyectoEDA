@@ -10,9 +10,8 @@ PoliEats es un sistema de gestión para el restaurante de la Escuela Politécnic
    - [Árbol Binario de Búsqueda](#3-árbol-binario-de-búsqueda)
 2. [Demostración de Funcionamiento](#demostración-de-funcionamiento)
    - [Visualización del Programa](#visualización-del-programa)
-3. [Manual de Uso](#manual-de-uso)
-4. [Herramientas Usadas](#herramientas-usadas)
-5. [Autores](#autores)
+3. [Herramientas Usadas](#herramientas-usadas)
+4. [Autores](#autores)
 
 ## Funcionamiento del Programa
 
@@ -112,54 +111,45 @@ Para obtener más información sobre la estructura de datos utilizada en este pr
 
 ## Demostración de Funcionamiento
 
-Para ver el funcionamiento del programa, sigue estos pasos:
-
-1. **Inicia el servidor:** `python main.py`
-2. **Abre tu navegador:** Dirígete a `http://localhost:8000`
-3. **Prueba las funcionalidades:** Realiza pedidos, actualiza inventario y gestiona reservas para explorar las capacidades del sistema.
-
 ### Visualización del Programa
 
 <table>
-  <tr>
-    <td><img src="https://github.com/user-attachments/assets/cd200f0f-5693-49e4-8abc-df7e6c066ddc" alt="Interfaz de Pedidos"></td>
-    <td><img src="https://github.com/user-attachments/assets/9a7d19ab-dea5-42c6-b738-2cd90ef581a4" alt="Interfaz de Inventario"></td>
+    <tr>
+    <td><img src="https://github.com/user-attachments/assets/fe8ec399-b7af-4cdb-991a-32b0204c014a" alt="Interfaz de Pedidos"></td>
+    <td><img src="https://github.com/user-attachments/assets/4a597957-4c91-4c0a-bffb-1ec5cc77b142"></td>
+  </tr>
+     <tr>
+    <td><img src="https://github.com/user-attachments/assets/df314ec9-58a8-4e58-9f90-a865b8972935" alt="Interfaz de Pedidos"></td>
+    <td><img src="https://github.com/user-attachments/assets/19296f69-2ef4-430b-b597-dc9d26b21dcf"></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/19d46bb6-e78a-4760-b09d-e68034a5524b" alt="Interfaz de Reservas"></td>
-    <td><img src="https://github.com/user-attachments/assets/a3c31967-1f6c-4790-a9f4-a20d32e34ab5" alt="Gestión de Pedidos"></td>
+    <td><img src="https://github.com/user-attachments/assets/825ed267-1123-4f62-9022-beec250dbeaa" alt="Interfaz de Pedidos"></td>
+    <td><img src="https://github.com/user-attachments/assets/b3a54258-9b08-422e-88ca-850fc3226f6d"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/415a9ae1-a3fa-4372-85fe-4de823a9b306" alt="Interfaz de Reservas"></td>
+    <td><img src="https://github.com/user-attachments/assets/a963368a-4e48-4c33-84c9-a4052f3338ad" alt="Gestión de Pedidos"></td>
   </tr>
 </table>
 
-## Manual de Uso
 
-1. **Instalación:**
-   - Clona el repositorio: `git clone https://github.com/tu_usuario/PoliEats.git`
-   - Navega al directorio del proyecto: `cd PoliEats`
-   - Instala las dependencias: `pip install -r requirements.txt`
-
-2. **Configuración:**
-   - Edita el archivo `config.json` para ajustar los parámetros del sistema según tus necesidades.
-
-3. **Ejecución:**
-   - Ejecuta el programa: `python main.py`
-   - Accede a la interfaz web a través de `http://localhost:8000`
-
-4. **Funciones Principales:**
-   - **Gestionar Pedidos:** Realiza y procesa pedidos desde la interfaz.
-   - **Actualizar Inventario:** Agrega o elimina productos del inventario.
-   - **Gestionar Reservas:** Reserva mesas y visualiza el estado de las reservas.
 
 ## Herramientas Usadas
 
-- **Lenguaje de Programación:** Python
-- **Framework Web:** Flask
-- **Base de Datos:** SQLite
-- **Gestión de Dependencias:** `pip`
+- **Lenguaje de Programación:** Java
+- **Versionamiento:** Git and github
+- **Interfaz gráfica:** Scene Builder y JavaFX
+- **IDEs:** IntelliJ y netbeans
 
 ## Autores
 
-- **Fernando Huilca** - Diseñador Gráfico [@FernandoHuilca](https://github.com/FernandoHuilca)
-- **Mateo Simbaña** - Aguatero [@mateonicolasg](https://github.com/mateonicolasg)
-- **Mateo Quisilema** - El Bromas [@JuanMateoQ](https://github.com/JuanMateoQ)
-- **Alisson Betancourt** - Programadora Principal [@AlizBet44](https://github.com/AlizBet44)
+- **Fernando Huilca** - Programador [@FernandoHuilca](https://github.com/FernandoHuilca)
+- **Mateo Simbaña** - Programador [@mateonicolasg](https://github.com/mateonicolasg)
+- **Mateo Quisilema** - Programador [@JuanMateoQ](https://github.com/JuanMateoQ)
+- **Alisson Betancourt** - Programadora [@AlizBet44](https://github.com/AlizBet44)
+<br> 
+  <table>
+    <tr>
+    <td><img src="https://github.com/user-attachments/assets/c7e475f4-9d6b-4a42-8d82-a6b570537d90" alt="Interfaz de Pedidos"></td>
+    <td><img src="https://github.com/user-attachments/assets/4ef3bfb6-f262-4fff-a4d1-9ea810ce66e5"></td>
+</table>
